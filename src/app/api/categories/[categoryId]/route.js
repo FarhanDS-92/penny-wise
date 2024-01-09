@@ -5,19 +5,19 @@ import { fetchUser } from "@/lib/fetchUser.js";
 export async function DELETE(req, res) {
   try {
     const user = await fetchUser();
-    const { goalId } = res.params;
+    const { categoryId } = res.params;
 
     if (!user.id) {
       return NextResponse.json({ success: false, error: "You must login." });
     }
 
-    const goal = await prisma.goal.delete({
+    const category = await prisma.category.delete({
       where: {
-        id: goalId,
+        id: categoryId,
       },
     });
 
-    return NextResponse.json({ success: true, goal });
+    return NextResponse.json({ success: true, category });
   } catch (error) {
     return NextResponse.json({ success: false, error: error.message });
   }
@@ -26,26 +26,23 @@ export async function DELETE(req, res) {
 export async function PUT(req, res) {
   try {
     const user = await fetchUser();
-    const { goalId } = res.params;
-    const { name, cost, description, completeBy } = await req.json();
+    const { categoryId } = res.params;
+    const { name } = await req.json();
 
     if (!user.id) {
       return NextResponse.json({ success: false, error: "You must login." });
     }
 
-    const goal = await prisma.goal.update({
+    const category = await prisma.category.update({
       where: {
-        id: goalId,
+        id: categoryId,
       },
       data: {
         name,
-        cost,
-        description,
-        completeBy,
       },
     });
 
-    return NextResponse.json({ success: true, goal });
+    return NextResponse.json({ success: true, category });
   } catch (error) {
     return NextResponse.json({ success: false, error: error.message });
   }
