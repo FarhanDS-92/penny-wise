@@ -1,4 +1,10 @@
+
 /* Default styles for all screen sizes */
+* {
+  margin: 0px;
+}
+
+
 body {
     font-size: 16px;
   }
@@ -26,3 +32,4 @@ body {
     }
     /* Additional styles for large screens */
   }
+
