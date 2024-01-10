@@ -1,6 +1,8 @@
-body {
-  margin: 0;
+
+* {
+  margin: 0px;
   font-family: "Arial", sans-serif;
+  font-size: 16px;
 }
 
 .navbar {
@@ -63,8 +65,16 @@ body {
   margin: 10px 0;
 }
 
+
 /* Media Query for small screens */
+
+/* Responsive styles for small screens (mobile) */
 @media only screen and (max-width: 768px) {
+  
+   body {
+    font-size: 14px;
+  }
+  
   .centerLogo {
     flex: 2;
   }
@@ -102,3 +112,22 @@ body {
     display: flex;
   }
 }
+
+/* Responsive styles for medium screens (tablets) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  body {
+    font-size: 15px;
+  }
+
+  /* Additional styles for medium screens */
+}
+
+/* Responsive styles for large screens (desktops) */
+@media screen and (min-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
+
+  /* Additional styles for large screens */
+}
+

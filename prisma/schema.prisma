@@ -23,30 +23,39 @@ model User {
 }
 
 model Expense {
-  id          String    @id @default(uuid())
-  cost        Int
-  name        String
-  description String?
-  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
-  userId      String
-  category    Category? @relation(fields: [categoryId], references: [id], onDelete: Cascade)
-  categoryId  String?
-  createdAt   DateTime  @default(now())
+  id           String    @id @default(uuid())
+  cost         Int
+  name         String
+  description  String?
+  month        Int
+  year         Int
+  isActive     Boolean
+  isReoccuring Boolean
+  user         User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId       String
+  category     Category? @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  categoryId   String?
+  createdAt    DateTime  @default(now())
 }
 
 model Capital {
-  id          String   @id @default(uuid())
-  name        String
-  amount      Int
-  description String?
-  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  userId      String
-  createdAt   DateTime @default(now())
+  id           String   @id @default(uuid())
+  name         String
+  amount       Int
+  description  String?
+  month        Int
+  year         Int
+  isActive     Boolean
+  isReoccuring Boolean
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId       String
+  createdAt    DateTime @default(now())
 }
 
 model Category {
   id        String    @id @default(uuid())
   name      String
+  budget    Int
   user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId    String
   expenses  Expense[]
@@ -57,8 +66,11 @@ model Goal {
   id          String   @id @default(uuid())
   name        String
   cost        Int
+  allocated   Int
   description String?
-  completeBy  DateTime
+  month       Int
+  year        Int
+  isActive    Boolean
   user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId      String
   createdAt   DateTime @default(now())
