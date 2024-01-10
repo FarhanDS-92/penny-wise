@@ -1,19 +1,116 @@
-/* Default styles for all screen sizes */
+
 * {
   margin: 0px;
-}
-
-body {
+  font-family: "Arial", sans-serif;
   font-size: 16px;
 }
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #a1acbb; /* Updated background color */
+  padding: 10px;
+  color: white;
+}
+
+.leftSide {
+  flex: 1;
+}
+
+.centerLogo {
+  flex: 1;
+  text-align: center;
+}
+
+.centerLogo img {
+  max-width: 200px;
+}
+
+.rightSide {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.hamburgerMenu {
+  cursor: pointer;
+}
+
+.menuLinks {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 5%;
+  left: 90;
+  background-color: #a1acbb;
+  padding: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0s linear 0.5s; /* Delay visibility transition */
+  z-index: 1;
+}
+
+.menuLinks.show {
+  width: 200px;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s;
+}
+
+.menuLinks a {
+  color: white;
+  text-decoration: none;
+  margin: 10px 0;
+}
+
+
+/* Media Query for small screens */
+
 /* Responsive styles for small screens (mobile) */
-@media screen and (max-width: 767px) {
-  body {
+@media only screen and (max-width: 768px) {
+  
+   body {
     font-size: 14px;
   }
+  
+  .centerLogo {
+    flex: 2;
+  }
 
-  /* Additional styles for small screens */
+  .hamburgerMenu {
+    display: block;
+    font-size: 20px;
+    margin-right: 10px;
+  }
+
+  .rightSide {
+    position: relative;
+  }
+
+  .menuLinks {
+    .menuLinks {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 0;
+      background-color: #a1acbb;
+      padding: 10px;
+      z-index: 1;
+    }
+  }
+
+  .menuLinks a {
+    margin: 10px 0;
+    color: white;
+    text-decoration: none;
+  }
+
+  .menuLinks.show {
+    display: flex;
+  }
 }
 
 /* Responsive styles for medium screens (tablets) */
@@ -33,3 +130,4 @@ body {
 
   /* Additional styles for large screens */
 }
+
