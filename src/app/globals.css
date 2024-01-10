@@ -1,35 +1,35 @@
-
 /* Default styles for all screen sizes */
 * {
   margin: 0px;
 }
 
-
 body {
-    font-size: 16px;
-  }
-  
-  /* Responsive styles for small screens (mobile) */
-  @media screen and (max-width: 767px) {
-    body {
-      font-size: 14px;
-    }
-    /* Additional styles for small screens */
-  }
-  
-  /* Responsive styles for medium screens (tablets) */
-  @media screen and (min-width: 768px) and (max-width: 1023px) {
-    body {
-      font-size: 15px;
-    }
-    /* Additional styles for medium screens */
-  }
-  
-  /* Responsive styles for large screens (desktops) */
-  @media screen and (min-width: 1024px) {
-    body {
-      font-size: 18px;
-    }
-    /* Additional styles for large screens */
+  font-size: 16px;
+}
+
+/* Responsive styles for small screens (mobile) */
+@media screen and (max-width: 767px) {
+  body {
+    font-size: 14px;
   }
 
+  /* Additional styles for small screens */
+}
+
+/* Responsive styles for medium screens (tablets) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  body {
+    font-size: 15px;
+  }
+
+  /* Additional styles for medium screens */
+}
+
+/* Responsive styles for large screens (desktops) */
+@media screen and (min-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
+
+  /* Additional styles for large screens */
+}
