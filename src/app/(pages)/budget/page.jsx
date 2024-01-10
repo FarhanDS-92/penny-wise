@@ -30,18 +30,27 @@ export default async function budget() {
   function totalExpenses(expenses) {
     let totalExpense = 0;
 
-    for (let i = 0; i < capital.length; i++) {
-      totalExpense += capital[i].amount;
+    for (let i = 0; i < expenses.length; i++) {
+      totalExpense += expenses[i].cost;
     }
 
     return totalExpense;
+  }
+
+  const isSurplus = totalCapital(capital) - totalExpenses(expenses);
+
+  function checkSurplus(isSurplus) {
+    if (isSurplus >= 0) {
+      return true;
+    }
+    return false;
   }
 
   return (
     <section>
       <Link href={"/capital"}>
         <div id="totalCapital">
-          <h2>Cash Flow</h2>
+          <h2>Capital</h2>
           <p>{totalCapital(capital)}</p>
         </div>
       </Link>
@@ -54,7 +63,8 @@ export default async function budget() {
       </Link>
 
       <div id="budgetAllocation">
-        <p>{totalCapital(capital) - totalExpenses(expenses)}</p>
+        <h2>{checkSurplus(isSurplus) ? "Surplus" : "Deficit"}</h2>
+        <p>{isSurplus}</p>
       </div>
     </section>
   );
