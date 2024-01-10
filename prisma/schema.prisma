@@ -50,19 +50,16 @@ model Category {
   user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId    String
   expenses  Expense[]
-  goal      Goal?     @relation(fields: [goalId], references: [id], onDelete: Cascade)
-  goalId    String?
   createdAt DateTime  @default(now())
 }
 
 model Goal {
-  id          String     @id @default(uuid())
+  id          String   @id @default(uuid())
   name        String
   cost        Int
   description String?
-  categories  Category[]
   completeBy  DateTime
-  user        User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId      String
-  createdAt   DateTime   @default(now())
+  createdAt   DateTime @default(now())
 }
