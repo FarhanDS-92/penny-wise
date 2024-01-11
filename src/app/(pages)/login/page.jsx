@@ -7,6 +7,8 @@ export default function Login() {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
 	const [email, setEmail] = useState("");
+	const [isPopUp, setIsPopUp] = useState(false);
+	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState("");
 
 	const router = useRouter();
@@ -23,18 +25,27 @@ export default function Login() {
 			}),
 		});
 		const info = await response.json();
-		console.log(info);
+		setIsLoading(false);
 		if (info.error) {
 			return setError(info.error);
 		}
 		router.push("/");
 		router.refresh();
 	}
+	const handleClosePopup = () => {
+		setIsPopUp(true);
+		router.push("/");
+		router.refresh();
+	};
 
 	return (
-		<div>
-			<div>
+		<div className="overlay">
+			<div className="popup">
+				<span className="close" onClick={handleClosePopup}>
+					x
+				</span>
 				<h3>Log In</h3>
+				<br />
 				<form onSubmit={handleLogin}>
 					<input
 						placeholder="Username"
@@ -43,21 +54,41 @@ export default function Login() {
 					/>
 					<br />
 					<input
-						placeholder="email"
+						placeholder="Email"
 						onChange={(e) => setEmail(e.target.value)}
 						value={email}
 					/>
 					<br />
 					<input
-						placeholder="password"
+						placeholder="Password"
 						onChange={(e) => setPassword(e.target.value)}
 						value={password}
 						type="password"
 					/>
 					<br />
-					<button type="submit">Login</button>
+
+					<button type="submit" className="btn-login">
+						{isLoading ? (
+							<img
+								src="Gear-200px.svg"
+								alt="gear-loading"
+								width={40}
+								height={40}
+							/>
+						) : (
+							"Login"
+						)}
+					</button>
+					<br />
 					<div className="">
-						New to Penny Wise? <Link href={"/register"}>Register</Link>
+						<span className="link-login-register">
+							New to Penny Wise? Click here to{" "}
+							<Link
+								href={"/register"}
+								style={{ textDecoration: "none", fontSize: "12px" }}>
+								Register
+							</Link>
+						</span>
 					</div>
 
 					<p>{error}</p>
