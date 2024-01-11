@@ -7,6 +7,8 @@ export default function Register() {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
 	const [email, setEmail] = useState("");
+	const [isPopUp, setIsPopUp] = useState(false);
+
 	const [error, setError] = useState("");
 
 	const router = useRouter();
@@ -29,13 +31,22 @@ export default function Register() {
 		router.push("/");
 		router.refresh();
 	}
+	const handleClosePopup = () => {
+		setIsPopUp(true);
+		router.push("/");
+		router.refresh();
+	};
 
 	return (
-		<div>
-			hi
-			<div>
+		<div className="overlay">
+			<div className="popup">
+				<span className="close" onClick={handleClosePopup}>
+					x
+				</span>
+				{/* <img src="penny-wise-4.png" alt="logo" height={15} width={90} /> */}
 				<form onSubmit={handleRegister}>
 					<h3>Register</h3>
+					<br />
 					<input
 						placeholder="Username"
 						onChange={(e) => setUsername(e.target.value)}
@@ -50,15 +61,23 @@ export default function Register() {
 					<br />
 					<input
 						value={password}
-						placeholder="password"
+						placeholder="Password"
 						onChange={(e) => setPassword(e.target.value)}
 					/>
 					<br />
-					<button>Register</button>
-					 <div className="">
-						Already Registered Click here <Link href={"/login"}>Register</Link>
-						to login
-					</div> 
+					<button className="btn-login">Register</button>
+					<br />
+					<div className="">
+						<span className="link-login-register">
+							Already Registered Click here{" "}
+							<Link
+								href={"/login"}
+								style={{ textDecoration: "none", fontSize: "12px" }}>
+								Login
+							</Link>
+							to login
+						</span>
+					</div>
 
 					<p>{error}</p>
 				</form>

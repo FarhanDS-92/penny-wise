@@ -1,133 +1,180 @@
-
 * {
-  margin: 0px;
-  font-family: "Arial", sans-serif;
-  font-size: 16px;
+	margin: 0px;
+	font-family: "Arial", sans-serif;
+	font-size: 16px;
 }
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #a1acbb; /* Updated background color */
-  padding: 10px;
-  color: white;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #a1acbb; /* Updated background color */
+	padding: 10px;
+	color: white;
 }
 
 .leftSide {
-  flex: 1;
+	flex: 1;
 }
 
 .centerLogo {
-  flex: 1;
-  text-align: center;
+	flex: 1;
+	text-align: center;
 }
 
 .centerLogo img {
-  max-width: 200px;
+	max-width: 200px;
 }
 
 .rightSide {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+	flex: 1;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
 }
 
 .hamburgerMenu {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .menuLinks {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 5%;
-  left: 90;
-  background-color: #a1acbb;
-  padding: 10px;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.5s, visibility 0s linear 0.5s; /* Delay visibility transition */
-  z-index: 1;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 5%;
+	left: 90;
+	background-color: #a1acbb;
+	padding: 10px;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.5s, visibility 0s linear 0.5s; /* Delay visibility transition */
+	z-index: 1;
 }
 
 .menuLinks.show {
-  width: 200px;
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 0.5s;
+	width: 200px;
+	opacity: 1;
+	visibility: visible;
+	transition: opacity 0.5s;
 }
 
 .menuLinks a {
-  color: white;
-  text-decoration: none;
-  margin: 10px 0;
+	color: white;
+	text-decoration: none;
+	margin: 10px 0;
 }
+/* login */
+.overlay {
+	display: flex;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+.popup {
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	text-align: center;
+}
+
+.close {
+	color: #7f8c8d;
+	text-decoration: none;
+	cursor: pointer;
+	display: flex;
+	justify-content: flex-end;
+}
+.link-login-register {
+	font-size: 10px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center; /* Center items horizontally */
+	justify-content: center; /* Center items vertically */
+}
+.btn-login {
+	padding: 5px;
+	background-color: orange;
+	color: #fff;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	width: 80px;
+	border-radius: 20px;
+	text-align: center;
+}
+
+
+
 
 
 /* Media Query for small screens */
 
 /* Responsive styles for small screens (mobile) */
 @media only screen and (max-width: 768px) {
-  
-   body {
-    font-size: 14px;
-  }
-  
-  .centerLogo {
-    flex: 2;
-  }
+	body {
+		font-size: 14px;
+	}
 
-  .hamburgerMenu {
-    display: block;
-    font-size: 20px;
-    margin-right: 10px;
-  }
+	.centerLogo {
+		flex: 2;
+	}
 
-  .rightSide {
-    position: relative;
-  }
+	.hamburgerMenu {
+		display: block;
+		font-size: 20px;
+		margin-right: 10px;
+	}
 
-  .menuLinks {
-    .menuLinks {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: calc(100% + 10px);
-      left: 0;
-      background-color: #a1acbb;
-      padding: 10px;
-      z-index: 1;
-    }
-  }
+	.rightSide {
+		position: relative;
+	}
 
-  .menuLinks a {
-    margin: 10px 0;
-    color: white;
-    text-decoration: none;
-  }
+	.menuLinks {
+		.menuLinks {
+			display: none;
+			flex-direction: column;
+			position: absolute;
+			top: calc(100% + 10px);
+			left: 0;
+			background-color: #a1acbb;
+			padding: 10px;
+			z-index: 1;
+		}
+	}
 
-  .menuLinks.show {
-    display: flex;
-  }
+	.menuLinks a {
+		margin: 10px 0;
+		color: white;
+		text-decoration: none;
+	}
+
+	.menuLinks.show {
+		display: flex;
+	}
 }
 
 /* Responsive styles for medium screens (tablets) */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-  body {
-    font-size: 15px;
-  }
+	body {
+		font-size: 15px;
+	}
 
-  /* Additional styles for medium screens */
+	/* Additional styles for medium screens */
 }
 
 /* Responsive styles for large screens (desktops) */
 @media screen and (min-width: 1024px) {
-  body {
-    font-size: 18px;
-  }
+	body {
+		font-size: 18px;
+	}
 
-  /* Additional styles for large screens */
+	/* Additional styles for large screens */
 }
-
