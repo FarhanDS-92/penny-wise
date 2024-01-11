@@ -16,24 +16,37 @@ model User {
   username   String     @unique
   email      String     @unique
   password   String
-  expense    Expense[]
+  expenses   Expense[]
   categories Category[]
   capital    Capital[]
   goals      Goal[]
+  budgets    Budget[]
+}
+
+model Budget {
+  id         String     @id @default(uuid())
+  month      Int
+  year       Int
+  expenses   Expense[]
+  capital    Capital[]
+  categories Category[]
+  goals      Goal[]
+  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId     String
 }
 
 model Expense {
-  id          String    @id @default(uuid())
+  id          String   @id @default(uuid())
   cost        Int
   name        String
   description String?
-  month       Int
-  year        Int
-  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId      String
-  category    Category? @relation(fields: [categoryId], references: [id], onDelete: Cascade)
-  categoryId  String?
-  createdAt   DateTime  @default(now())
+  category    Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  categoryId  String
+  createdAt   DateTime @default(now())
+  budget      Budget   @relation(fields: [budgetId], references: [id], onDelete: Cascade)
+  budgetId    String
 }
 
 model Capital {
@@ -41,21 +54,23 @@ model Capital {
   name        String
   amount      Int
   description String?
-  month       Int
-  year        Int
   user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId      String
   createdAt   DateTime @default(now())
+  budget      Budget   @relation(fields: [budgetId], references: [id], onDelete: Cascade)
+  budgetId    String
 }
 
 model Category {
   id        String    @id @default(uuid())
   name      String
-  budget    Int
+  limit     Int
   user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId    String
   expenses  Expense[]
   createdAt DateTime  @default(now())
+  budget    Budget    @relation(fields: [budgetId], references: [id], onDelete: Cascade)
+  budgetId  String
 }
 
 model Goal {
@@ -70,4 +85,6 @@ model Goal {
   user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId      String
   createdAt   DateTime @default(now())
+  budget      Budget   @relation(fields: [budgetId], references: [id], onDelete: Cascade)
+  budgetId    String
 }
