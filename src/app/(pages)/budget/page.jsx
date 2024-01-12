@@ -43,5 +43,23 @@ export default async function budget() {
     }
   });
 
-  return <section className="budget-section"></section>;
+  return (
+    <section className="budget-section">
+      {separatedArrays.map((budgetYear) => {
+        return (
+          <div key={budgetYear[0].year}>
+            <p>{budgetYear[0].year}</p>
+
+            {budgetYear.map((budgetMonth) => {
+              return (
+                <div key={budgetMonth.id}>
+                  <p>{budgetMonth.month}</p>
+                </div>
+              );
+            })}
+          </div>
+        );
+      })}
+    </section>
+  );
 }
