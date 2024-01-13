@@ -1,3 +1,4 @@
+import BudgetLink from "@/app/components/BudgetLink.jsx";
 import { fetchUser } from "@/lib/fetchUser.js";
 import { prisma } from "@/lib/prisma.js";
 import Link from "next/link.js";
@@ -11,13 +12,6 @@ export default async function budget() {
     },
     include: {
       expenses: true,
-      goals: true,
-      capital: true,
-      categories: {
-        include: {
-          expenses: true,
-        },
-      },
     },
     orderBy: [
       {
@@ -43,19 +37,32 @@ export default async function budget() {
     }
   });
 
+  // console.log(separatedArrays[0]);
+
+  function yearlyExpense(budgetYear) {
+    let totalExpense = 0;
+
+    for (let i = 0; i < budgetYear.length; i++) {
+      for (let j = 0; j < budgetYear[i].expenses.length; j++) {
+        totalExpense += budgetYear[i].expenses[j].cost;
+      }
+    }
+
+    return totalExpense;
+  }
+
   return (
     <section className="budget-section">
       {separatedArrays.map((budgetYear) => {
         return (
           <div key={budgetYear[0].year}>
             <p>{budgetYear[0].year}</p>
+            <p>Yearly Expense: {yearlyExpense(budgetYear)}</p>
 
             {budgetYear.map((budgetMonth) => {
               return (
                 <Link key={budgetMonth.id} href={`/budget/${budgetMonth.id}`}>
-                  <div>
-                    <p>{budgetMonth.month}</p>
-                  </div>
+                  <BudgetLink budget={budgetMonth} />
                 </Link>
               );
             })}
