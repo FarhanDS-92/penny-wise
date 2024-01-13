@@ -52,9 +52,11 @@ export default async function budget() {
 
             {budgetYear.map((budgetMonth) => {
               return (
-                <div key={budgetMonth.id}>
-                  <p>{budgetMonth.month}</p>
-                </div>
+                <Link key={budgetMonth.id} href={`/budget/${budgetMonth.id}`}>
+                  <div>
+                    <p>{budgetMonth.month}</p>
+                  </div>
+                </Link>
               );
             })}
           </div>
