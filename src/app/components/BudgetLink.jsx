@@ -25,9 +25,9 @@ export default function BudgetLink({ budget }) {
   }
 
   return (
-    <div>
+    <div className="budgetMonth">
       <p>{`${months[budget.month - 1]}`}</p>
-      <p>Monthly Expense: {getTotalCost(budget)}</p>
+      <p>Monthly Expense: ${getTotalCost(budget)}</p>
     </div>
   );
 }

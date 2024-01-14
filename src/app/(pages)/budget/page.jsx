@@ -56,16 +56,19 @@ export default async function budget() {
       {separatedArrays.map((budgetYear) => {
         return (
           <div key={budgetYear[0].year}>
-            <p>{budgetYear[0].year}</p>
-            <p>Yearly Expense: {yearlyExpense(budgetYear)}</p>
-
-            {budgetYear.map((budgetMonth) => {
-              return (
-                <Link key={budgetMonth.id} href={`/budget/${budgetMonth.id}`}>
-                  <BudgetLink budget={budgetMonth} />
-                </Link>
-              );
-            })}
+            <div className="budgetYear">
+              <h2>{budgetYear[0].year}</h2>
+              <h2>Yearly Expense: ${yearlyExpense(budgetYear)}</h2>
+            </div>
+            <div className="monthList">
+              {budgetYear.map((budgetMonth) => {
+                return (
+                  <Link key={budgetMonth.id} href={`/budget/${budgetMonth.id}`}>
+                    <BudgetLink budget={budgetMonth} />
+                  </Link>
+                );
+              })}
+            </div>
           </div>
         );
       })}
