@@ -32,7 +32,7 @@ Navbar
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #a1acbb;
+  background-color: #e8eaea;
   padding: 10px;
   color: white;
 }
@@ -165,12 +165,11 @@ Budget Overview Page
 }
 
 .budgetMonth {
-  margin: 10px;
   border-bottom: 1px dotted black;
   display: flex;
   color: black;
   justify-content: space-between;
-  padding: 5px 5px 0px 5px;
+  padding: 15px 15px 5px 15px;
 }
 
 .budgetMonth:hover {
@@ -211,8 +210,7 @@ Budget Id Page
   display: flex;
   justify-content: space-between;
   color: black;
-  padding: 20px 10px;
-  padding-bottom: 0px;
+  padding: 15px 15px 5px 15px;
   border-bottom: 1px dotted black;
 }
 
