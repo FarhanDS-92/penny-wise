@@ -65,21 +65,30 @@ export default async function budgetDetails({ params }) {
   }
 
   return (
-    <>
-      <p>
-        {months[budget.month - 1]} {budget.year}
-      </p>
-      <Link key={1} href={`/budget/${budget.id}/expense`}>
-        <p>Expenses ${totalExpense}</p>
+    <div className="monthPage">
+      <div className="monthOverview">
+        <div className="monthYear">
+          <h1>{months[budget.month - 1]}</h1>
+          <h1>{budget.year}</h1>
+        </div>
+        <Link className="monthBreakdown" href={`/budget/${budget.id}/expense`}>
+          <div>Expenses</div>
+          <div>${totalExpense}</div>
+        </Link>
+        <Link className="monthBreakdown" href={`/budget/${budget.id}/capital`}>
+          <div>Capital </div>
+          <div>${totalCapital}</div>
+        </Link>
+        <Link className="monthBreakdown" href={`/budget/${budget.id}/goal`}>
+          <div>Goals</div>
+          <div>
+            ${goalToDate}/${totalGoals}
+          </div>
+        </Link>
+      </div>
+      <Link className="budgetButton" href={`/budget`}>
+        <button>Budget Overview</button>
       </Link>
-      <Link key={1} href={`/budget/${budget.id}/capital`}>
-        <p>Capital ${totalCapital}</p>
-      </Link>
-      <Link key={1} href={`/budget/${budget.id}/goal`}>
-        <p>
-          Goals ${goalToDate}/${totalGoals}
-        </p>
-      </Link>
-    </>
+    </div>
   );
 }

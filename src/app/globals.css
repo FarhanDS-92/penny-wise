@@ -5,11 +5,21 @@ Universal Section
 */
 
 * {
-	margin: 0px;
-	font-family: "Arial", sans-serif;
-	font-size: 16px;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0px;
+  font-family: "Arial", sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+button {
+  background-color: #23a9a4;
+  color: white;
+  padding: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  box-shadow: 3px 3px #7f8c8d;
 }
 
 /* 
@@ -19,58 +29,57 @@ Navbar
 */
 
 .navbar {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	background-color: #a1acbb;
-	padding: 10px;
-	color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #a1acbb;
+  padding: 10px;
+  color: white;
 }
 
 .centerLogo {
-	text-align: center;
+  text-align: center;
 }
 
 .centerLogo img {
-	max-width: 200px;
+  max-width: 200px;
 }
 
 .rightSide {
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .hamburgerMenu {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .menuLinks {
-
-	display: flex;
-	flex-direction: column;
-	position: absolute;
-	top: 5%;
-	left: 90;
-	background-color: #a1acbb;
-	padding: 10px;
-	opacity: 0;
-	visibility: hidden;
-	transition: opacity 0.5s, visibility 0s linear 0.5s;
-	z-index: 1;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 5%;
+  left: 90;
+  background-color: #a1acbb;
+  padding: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0s linear 0.5s;
+  z-index: 1;
 }
 
 .menuLinks.show {
-	width: 200px;
-	opacity: 1;
-	visibility: visible;
-	transition: opacity 0.5s;
+  width: 200px;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s;
 }
 
 .menuLinks a {
-	color: white;
-	text-decoration: none;
-	margin: 10px 0;
+  color: white;
+  text-decoration: none;
+  margin: 10px 0;
 }
 
 /* 
@@ -80,53 +89,52 @@ Login / Register
 */
 
 .overlay {
-	display: flex;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	align-items: center;
-	justify-content: center;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .popup {
-	background-color: #fff;
-	padding: 20px;
-	border-radius: 5px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-	text-align: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
 }
 
 .close {
-	color: #7f8c8d;
-	text-decoration: none;
-	cursor: pointer;
-	display: flex;
-	justify-content: flex-end;
+  color: #7f8c8d;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .link-login-register {
-	font-size: 10px;
+  font-size: 10px;
 }
 
-
 form {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-login {
-	padding: 5px;
-	background-color: orange;
-	color: #fff;
-	border: none;
-	border-radius: 3px;
-	cursor: pointer;
-	width: 80px;
-	border-radius: 20px;
-	text-align: center;
+  padding: 5px;
+  background-color: orange;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  width: 80px;
+  border-radius: 20px;
+  text-align: center;
 }
 
 /* 
@@ -134,6 +142,88 @@ form {
 Budget Overview Page
 ************************************************************* 
 */
+
+.budget-section {
+  width: 90%;
+  margin: auto;
+  margin-top: 20px;
+  background-color: #c0fbf9;
+}
+
+.budgetYear {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #23a9a4;
+  color: white;
+  padding: 5px;
+  border-bottom: 1px solid white;
+}
+
+.monthList {
+  display: block;
+}
+
+.budgetMonth {
+  margin: 10px;
+  border-bottom: 1px dotted black;
+  display: flex;
+  color: black;
+  justify-content: space-between;
+  padding: 5px 5px 0px 5px;
+}
+
+.budgetMonth:hover {
+  background-color: black;
+  color: white;
+}
+
+/* 
+*************************************************************
+Budget Id Page
+************************************************************* 
+*/
+
+.monthPage {
+  margin: auto;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.monthOverview {
+  width: 100%;
+  margin-top: 20px;
+  background-color: #c0fbf9;
+}
+
+.monthYear {
+  display: flex;
+  justify-content: space-between;
+  background-color: #23a9a4;
+  color: white;
+  padding: 10px;
+  border-bottom: 1px solid white;
+}
+
+.monthBreakdown {
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  padding: 20px 10px;
+  padding-bottom: 0px;
+  border-bottom: 1px dotted black;
+}
+
+.monthBreakdown:hover {
+  background-color: black;
+  color: white;
+}
+
+.budgetButton {
+  margin-top: 10px;
+}
 
 /* 
 *************************************************************
@@ -143,62 +233,60 @@ Media Queries
 
 /* Small screens */
 @media only screen and (max-width: 768px) {
-	body {
-		font-size: 14px;
-	}
+  body {
+    font-size: 14px;
+  }
 
-	.centerLogo {
-		flex: 2;
-	}
+  .centerLogo {
+    flex: 2;
+  }
 
-	.hamburgerMenu {
-		display: block;
-		font-size: 20px;
-		margin-right: 10px;
-	}
+  .hamburgerMenu {
+    display: block;
+    font-size: 20px;
+    margin-right: 10px;
+  }
 
-	.rightSide {
-		position: relative;
-	}
+  .rightSide {
+    position: relative;
+  }
 
-	.menuLinks {
-		.menuLinks {
-			display: none;
-			flex-direction: column;
-			position: absolute;
-			top: calc(100% + 10px);
-			left: 0;
-			background-color: #a1acbb;
-			padding: 10px;
-			z-index: 1;
-		}
-	}
+  .menuLinks {
+    .menuLinks {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 0;
+      background-color: #a1acbb;
+      padding: 10px;
+      z-index: 1;
+    }
+  }
 
-	.menuLinks a {
-		margin: 10px 0;
-		color: white;
-		text-decoration: none;
-	}
+  .menuLinks a {
+    margin: 10px 0;
+    color: white;
+    text-decoration: none;
+  }
 
-	.menuLinks.show {
-		display: flex;
-	}
+  .menuLinks.show {
+    display: flex;
+  }
 }
 
 /*  Medium screens (tablets) */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+  body {
+    font-size: 15px;
+  }
 
-	body {
-		font-size: 15px;
-	}
-
-	/* Additional styles for medium screens */
-
+  /* Additional styles for medium screens */
 }
 
 /*  Large screens (desktops) */
 @media screen and (min-width: 1024px) {
-	body {
-		font-size: 18px;
-	}
+  body {
+    font-size: 18px;
+  }
 }
