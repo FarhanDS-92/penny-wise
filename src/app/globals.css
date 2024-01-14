@@ -145,6 +145,7 @@ Budget Overview Page
 ************************************************************* 
 */
 
+<<<<<<< HEAD
 .budget-section {
 	display: flex;
 	justify-content: space-around;
@@ -177,6 +178,8 @@ Budget Overview Page
 	font-size: 1.2em;
 }
 
+=======
+>>>>>>> f453ce90d1a213d5ee8f42d8419701033f640f28
 /* 
 *************************************************************
 Media Queries
