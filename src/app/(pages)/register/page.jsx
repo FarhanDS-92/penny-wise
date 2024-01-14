@@ -8,6 +8,7 @@ export default function Register() {
 	const [password, setPassword] = useState("");
 	const [email, setEmail] = useState("");
 	const [isPopUp, setIsPopUp] = useState(false);
+	const [isLoading, setIsLoading] = useState(false);
 
 	const [error, setError] = useState("");
 
@@ -43,7 +44,6 @@ export default function Register() {
 				<span className="close" onClick={handleClosePopup}>
 					x
 				</span>
-				{/* <img src="penny-wise-4.png" alt="logo" height={15} width={90} /> */}
 				<form onSubmit={handleRegister}>
 					<h3>Register</h3>
 					<br />
@@ -65,7 +65,18 @@ export default function Register() {
 						onChange={(e) => setPassword(e.target.value)}
 					/>
 					<br />
-					<button className="btn-login">Register</button>
+					<button type="submit" disabled={isLoading} className="btn-login">
+						{isLoading ? (
+							<img
+								src="spinball.svg"
+								alt="gear-loading"
+								width={40}
+								height={40}
+							/>
+						) : (
+							"Register"
+						)}
+					</button>
 					<br />
 					<div className="">
 						<span className="link-login-register">

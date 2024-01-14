@@ -67,10 +67,10 @@ export default function Login() {
 					/>
 					<br />
 
-					<button type="submit" className="btn-login">
+					<button type="submit" disabled={isLoading} className="btn-login">
 						{isLoading ? (
 							<img
-								src="Gear-200px.svg"
+								src="spinball.svg"
 								alt="gear-loading"
 								width={40}
 								height={40}
