@@ -10,6 +10,15 @@ export default async function expenseDetails({ params }) {
     },
   });
 
+  const categories = await prisma.category.findMany({
+    where: {
+      budgetId,
+    },
+    include: {
+      expenses: true,
+    },
+  });
+
   for (let i = 0; i < expenses.length; i++) {
     totalExpense += expenses[i].cost;
   }
@@ -17,14 +26,20 @@ export default async function expenseDetails({ params }) {
   return (
     <>
       <p>EXPENSES ${totalExpense}</p>
-      {expenses.map((expense) => {
+      {categories.map((category) => {
         return (
-          <div key={expense.id}>
-            <p>
-              {expense.name} ${expense.cost}
-            </p>
-            <p>{expense.description}</p>
-          </div>
+          <>
+            <p>{category.name}</p>
+            {category.expenses.map((expense) => {
+              return (
+                <div key={expense.id}>
+                  <p>
+                    {expense.name} ${expense.cost}
+                  </p>
+                </div>
+              );
+            })}
+          </>
         );
       })}
     </>
