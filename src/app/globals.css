@@ -22,7 +22,7 @@ body {
 }
 
 button {
-  background-color: #23a9a4;
+  background-color: #e07416;
   color: white;
   padding: 5px;
   font-size: 15px;
@@ -168,7 +168,7 @@ Budget Overview Page
   width: 90%;
   margin: auto;
   margin-top: 20px;
-  background-color: #c0fbf9;
+  background-color: #e8eaea;
 }
 
 .budgetYear {
@@ -194,8 +194,9 @@ Budget Overview Page
 }
 
 .budgetMonth:hover {
-  background-color: black;
+  background-color: #e7842d;
   color: white;
+  font-weight: bolder;
 }
 
 /* 
@@ -215,7 +216,7 @@ Budget Id Page
 .monthOverview {
   width: 100%;
   margin-top: 20px;
-  background-color: #c0fbf9;
+  background-color: #e8eaea;
 }
 
 .monthYear {
@@ -259,8 +260,9 @@ Budget Id Page
 }
 
 .expense:hover {
-  background-color: black;
+  background-color: #e7842d;
   color: white;
+  font-weight: bolder;
 }
 
 .capital {
@@ -271,8 +273,9 @@ Budget Id Page
 }
 
 .capital:hover {
-  background-color: black;
+  background-color: #e7842d;
   color: white;
+  font-weight: bolder;
 }
 
 .goal {
@@ -283,8 +286,9 @@ Budget Id Page
 }
 
 .goal:hover {
-  background-color: black;
+  background-color: #e7842d;
   color: white;
+  font-weight: bolder;
 }
 
 .budgetButton {

@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/prisma.js";
 import Link from "next/link.js";
+import loading from "../loading.jsx";
 
 export default async function budgetDetails({ params }) {
   const { budgetId } = params;
@@ -71,6 +72,10 @@ export default async function budgetDetails({ params }) {
 
   for (let i = 0; i < goals.length; i++) {
     goalToDate += goals[i].allocated;
+  }
+
+  if (!budget) {
+    return <div></div>;
   }
 
   return (
