@@ -14,7 +14,7 @@ export async function POST(req, res) {
     if (!name || !cost) {
       return NextResponse.json({
         success: false,
-        error: "You must provide a name and cost.",
+        error: "You must provide a name and dollar amount.",
       });
     }
 

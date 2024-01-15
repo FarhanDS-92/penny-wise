@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation.js";
 import { useState } from "react";
 
 export default function NewExpense({ budgetId, categories }) {
@@ -9,9 +10,17 @@ export default function NewExpense({ budgetId, categories }) {
   const [category, setCategory] = useState("");
   const [expenseName, setExpenseName] = useState("");
   const [expenseAmount, setExpenseAmount] = useState("");
+  const [error, setError] = useState("");
+  const [errorCategory, setErrorCategory] = useState("");
+
+  const router = useRouter();
 
   function handleAddExpense() {
     setAddExpense(!addExpense);
+    setCategory("");
+    setExpenseName("");
+    setExpenseAmount("");
+    setError("");
   }
 
   async function handleSubmitExpense(e) {
@@ -21,10 +30,53 @@ export default function NewExpense({ budgetId, categories }) {
       method: "POST",
       body: JSON.stringify({
         name: expenseName,
-        cost: expenseAmount,
+        cost: +expenseAmount,
         categoryId: category,
+        budgetId,
       }),
     });
+
+    const data = await res.json();
+
+    if (data.error) {
+      return setError(data.error);
+    }
+
+    setCategory("");
+    setExpenseName("");
+    setExpenseAmount("");
+    setError("");
+
+    router.refresh();
+  }
+
+  function handleAddCategory() {
+    setAddCategory(!addCategory);
+    setNewCategory("");
+    setErrorCategory("");
+  }
+
+  async function handleSubmitCategory(e) {
+    e.preventDefault();
+
+    const res = await fetch("/api/categories", {
+      method: "POST",
+      body: JSON.stringify({
+        name: newCategory,
+        budgetId,
+      }),
+    });
+
+    const data = await res.json();
+
+    if (data.error) {
+      return setErrorCategory(data.error);
+    }
+
+    setAddCategory(false);
+    setNewCategory("");
+    setErrorCategory("");
+    router.refresh();
   }
 
   return (
@@ -32,7 +84,22 @@ export default function NewExpense({ budgetId, categories }) {
       <button onClick={handleAddExpense}>Add New Expense</button>
 
       <div style={{ display: addExpense ? "block" : "none" }}>
-        <button>Create New Category</button>
+        <button onClick={handleAddCategory}>Create New Category</button>
+
+        <div style={{ display: addCategory ? "block" : "none" }}>
+          <form onSubmit={handleSubmitCategory}>
+            <input
+              type="text"
+              required
+              name="category"
+              placeholder="Category"
+              value={newCategory}
+              onChange={(e) => setNewCategory(e.target.value)}
+            />
+            <button type="Submit">Submit</button>
+            <p>{errorCategory}</p>
+          </form>
+        </div>
 
         <form onSubmit={handleSubmitExpense}>
           <select
@@ -67,6 +134,7 @@ export default function NewExpense({ budgetId, categories }) {
           />
 
           <button type="Submit">Submit</button>
+          <p>{error}</p>
         </form>
       </div>
     </div>
