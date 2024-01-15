@@ -291,6 +291,20 @@ Budget Id Page
   font-weight: bolder;
 }
 
+.goalAmount {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.goalButton {
+  background-color: #23a9a4;
+  color: white;
+  box-shadow: none;
+  font-weight: bold;
+  padding: 0px 5px;
+}
+
 .budgetButton {
   margin-top: 10px;
 }
