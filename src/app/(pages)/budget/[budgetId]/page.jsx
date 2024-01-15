@@ -30,6 +30,15 @@ export default async function budgetDetails({ params }) {
     },
   });
 
+  const categories = await prisma.category.findMany({
+    where: {
+      budgetId,
+    },
+    include: {
+      expenses: true,
+    },
+  });
+
   const expenses = await prisma.expense.findMany({
     where: {
       budgetId,
@@ -71,20 +80,54 @@ export default async function budgetDetails({ params }) {
           <h1>{months[budget.month - 1]}</h1>
           <h1>{budget.year}</h1>
         </div>
-        <Link className="monthBreakdown" href={`/budget/${budget.id}/expense`}>
-          <div>Expenses</div>
-          <div>${totalExpense}</div>
-        </Link>
-        <Link className="monthBreakdown" href={`/budget/${budget.id}/capital`}>
-          <div>Capital </div>
-          <div>${totalCapital}</div>
-        </Link>
-        <Link className="monthBreakdown" href={`/budget/${budget.id}/goal`}>
-          <div>Goals</div>
+        <div className="monthBreakdown">
+          <div>EXPENSES</div>
+          <div>Monthly total: ${totalExpense}</div>
+        </div>
+        {categories.map((category) => {
+          return (
+            <div className="expenseBreakdown">
+              <p className="expenseCategory">{category.name}</p>
+              {category.expenses.map((expense) => {
+                return (
+                  <div className="expense" key={expense.id}>
+                    <p>{expense.name}</p>
+                    <p>${expense.cost}</p>
+                  </div>
+                );
+              })}
+            </div>
+          );
+        })}
+        <div className="monthBreakdown">
+          <div>CAPITAL</div>
+          <div>Monthly total: ${totalCapital}</div>
+        </div>
+        {capital.map((capital) => {
+          return (
+            <div className="capital" key={capital.id}>
+              <p>{capital.name}</p>
+              <p>${capital.amount}</p>
+            </div>
+          );
+        })}
+        <div className="monthBreakdown">
+          <div>GOALS</div>
           <div>
-            ${goalToDate}/${totalGoals}
+            Monthly total: ${goalToDate}/${totalGoals}
           </div>
-        </Link>
+        </div>
+        {goals.map((goal) => {
+          return (
+            <div className="goal" key={goal.id}>
+              <p>{goal.name}</p>
+              <p>
+                ${goal.allocated}/${goal.cost}
+              </p>
+              <p>{goal.description}</p>
+            </div>
+          );
+        })}
       </div>
       <Link className="budgetButton" href={`/budget`}>
         <button>Budget Overview</button>
