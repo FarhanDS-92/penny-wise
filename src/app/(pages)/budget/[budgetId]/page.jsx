@@ -1,6 +1,8 @@
 import { prisma } from "@/lib/prisma.js";
 import Link from "next/link.js";
 import loading from "../loading.jsx";
+import NewExpense from "@/app/components/AddExpense.jsx";
+import { fetchUser } from "@/lib/fetchUser.js";
 
 export default async function budgetDetails({ params }) {
   const { budgetId } = params;
@@ -137,6 +139,9 @@ export default async function budgetDetails({ params }) {
       <Link className="budgetButton" href={`/budget`}>
         <button>Budget Overview</button>
       </Link>
+
+      <NewExpense budgetId={budgetId} categories={categories} />
     </div>
   );
+  1;
 }
