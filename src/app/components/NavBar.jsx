@@ -1,23 +1,21 @@
 "use client";
-import Link from "next/link.js";
+import Link from "next/link";
 import { useState } from "react";
+import Logout from "./Logout.jsx";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false); // Assume user is not logged in initially
+  const [userName, setUserName] = useState("");
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
 
-  const handleLogout = () => {
-    // Your logout logic here (clearing tokens, etc.)
-    setLoggedIn(false);
-  };
-
   const handleLinkClick = () => {
     // Hide the menu when a link is clicked
     setShowMenu(false);
+    setLoggedIn(true);
   };
 
   return (
@@ -25,7 +23,7 @@ const Navbar = () => {
       <div className="leftSide">
         <Link href="/" passHref>
           <div className="homeLink" onClick={handleLinkClick}>
-            Home
+            <img src="/homeicon.png" alt="" style={{ height: "45px" }} />
           </div>
         </Link>
       </div>
@@ -40,14 +38,10 @@ const Navbar = () => {
           <Link href="/budget" passHref>
             <div onClick={handleLinkClick}>Budget</div>
           </Link>
-          <Link href="/goals" passHref>
-            <div onClick={handleLinkClick}>Goals</div>
-          </Link>
+
           {loggedIn ? (
             <>
-              <Link href="/logout" passHref>
-                <div onClick={handleLinkClick}>Logout</div>
-              </Link>
+              <Logout setLoggedIn={setLoggedIn} />
             </>
           ) : (
             <>

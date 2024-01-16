@@ -1,3 +1,4 @@
+import { fetchUser } from "@/lib/fetchUser.js";
 import NavBar from "./components/NavBar.jsx";
 import "./globals.css";
 
