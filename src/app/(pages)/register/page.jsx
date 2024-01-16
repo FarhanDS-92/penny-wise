@@ -74,7 +74,7 @@ export default function Register() {
 					</button>
 					<br />
 					<div className="link-login-register">
-						Already Registered Click{" "}
+						Already Registered? Click{" "}
 						<Link
 							href={"/login"}
 							style={{ textDecoration: "none", fontSize: "12px" }}>
@@ -83,7 +83,7 @@ export default function Register() {
 						to login
 					</div>
 
-					<p>{error}</p>
+					<p className="error-login">{error}</p>
 				</form>
 			</div>
 		</div>

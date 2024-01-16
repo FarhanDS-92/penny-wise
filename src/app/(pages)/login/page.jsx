@@ -85,7 +85,7 @@ export default function Login() {
 						to register
 					</div>
 
-					<p>{error}</p>
+					<p className="error-login">{error}</p>
 				</form>
 			</div>
 		</div>
