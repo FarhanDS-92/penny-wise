@@ -22,13 +22,13 @@ body {
 }
 
 button {
-  background-color: #e07416;
-  color: white;
-  padding: 5px;
-  font-size: 15px;
-  font-weight: bold;
-  border: none;
-  box-shadow: 3px 3px #7f8c8d;
+	background-color: #e07416;
+	color: white;
+	padding: 5px;
+	font-size: 15px;
+	font-weight: bold;
+	border: none;
+	box-shadow: 3px 3px #7f8c8d;
 }
 
 /* 
@@ -65,25 +65,25 @@ Navbar
 }
 
 .menuLinks {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 7%;
-  right: 0;
-  background-color: #a1acbb;
-  padding: 10px;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.5s, visibility 0s linear 0.5s;
-  z-index: 1;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 7%;
+	right: 0;
+	background-color: #a1acbb;
+	padding: 10px;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.5s, visibility 0s linear 0.5s;
+	z-index: 1;
 }
 
 .menuLinks.show {
-  width: 210px;
-  opacity: 1;
-  margin-left: -10px;
-  visibility: visible;
-  transition: opacity 0.5s;
+	width: 210px;
+	opacity: 1;
+	margin-left: -10px;
+	visibility: visible;
+	transition: opacity 0.5s;
 
 }
 
@@ -94,7 +94,7 @@ Navbar
 }
 
 #logout {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 
@@ -135,6 +135,7 @@ Login / Register
 .link-login-register {
 	font-size: 13px;
 }
+
 .click-here {
 	margin-top: 50px;
 	color: orange;
@@ -147,6 +148,7 @@ form {
 	align-items: center;
 	justify-content: center;
 }
+
 .input-login-size {
 	width: 230px;
 	height: 30px;
@@ -189,6 +191,7 @@ Create Budget
 	justify-content: center;
 	margin: 20px;
 }
+
 .popup-create-budget {
 	width: 300px;
 	height: 200px;
@@ -197,11 +200,13 @@ Create Budget
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 	padding: 10px;
 }
+
 .submit-cancel-btn {
 	display: flex;
 	gap: 20px;
 	margin: 20px;
 }
+
 .month-year-input {
 	display: block;
 	margin: 5px;
@@ -342,17 +347,17 @@ Budget Id Page
 }
 
 .goalAmount {
-  display: flex;
-  gap: 5px;
-  align-items: center;
+	display: flex;
+	gap: 5px;
+	align-items: center;
 }
 
 .goalButton {
-  background-color: #23a9a4;
-  color: white;
-  box-shadow: none;
-  font-weight: bold;
-  padding: 0px 5px;
+	background-color: #23a9a4;
+	color: white;
+	box-shadow: none;
+	font-weight: bold;
+	padding: 0px 5px;
 }
 
 .budgetButton {
@@ -368,46 +373,46 @@ Media Queries
 /* Small screens */
 @media only screen and (max-width: 768px) {
 
-  body {
-    font-size: 14px;
-  }
+	body {
+		font-size: 14px;
+	}
 
-  .centerLogo {
-    flex: 2;
-  }
+	.centerLogo {
+		flex: 2;
+	}
 
-  .hamburgerMenu {
-    display: block;
-    font-size: 20px;
-    margin-right: 10px;
-  }
+	.hamburgerMenu {
+		display: block;
+		font-size: 20px;
+		margin-right: 10px;
+	}
 
-  .rightSide {
-    position: relative;
-  }
+	.rightSide {
+		position: relative;
+	}
 
-  .menuLinks {
-    .menuLinks {
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      top: 10%;
-      right: 0;
-      background-color: #a1acbb;
-      padding: 10px;
-      z-index: 1;
-    }
-  }
+	.menuLinks {
+		.menuLinks {
+			display: flex;
+			flex-direction: column;
+			position: absolute;
+			top: 10%;
+			right: 0;
+			background-color: #a1acbb;
+			padding: 10px;
+			z-index: 1;
+		}
+	}
 
-  .menuLinks a {
-    margin: 10px 0;
-    color: white;
-    text-decoration: none;
-  }
+	.menuLinks a {
+		margin: 10px 0;
+		color: white;
+		text-decoration: none;
+	}
 
-  .menuLinks.show {
-    display: flex;
-  }
+	.menuLinks.show {
+		display: flex;
+	}
 
 }
 
@@ -415,18 +420,17 @@ Media Queries
 @media screen and (min-width: 768px) and (max-width: 1023px) {
 
 
-  /* Additional styles for medium screens */
-  body {
-    font-size: 15px;
-  }
+	/* Additional styles for medium screens */
+	body {
+		font-size: 15px;
+	}
 
 }
 
 /*  Large screens (desktops) */
 @media screen and (min-width: 1024px) {
 
-  body {
-    font-size: 18px;
-  }
+	body {
+		font-size: 18px;
+	}
 }
-
