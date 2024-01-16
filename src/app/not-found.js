@@ -5,7 +5,7 @@ export default async function NotFound() {
   const user = await fetchUser();
 
   return (
-    <main className="notfound">
+    <section className="notfound">
       <h1>404 error.</h1>
       <p>We could not find the page you were looking for.</p>
       <p>
@@ -18,6 +18,6 @@ export default async function NotFound() {
       </p>
 
       <img src="/piggy.gif" className="piggy" />
-    </main>
+    </section>
   );
 }
