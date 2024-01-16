@@ -3,9 +3,8 @@ import Link from "next/link";
 import { useState } from "react";
 import Logout from "./Logout.jsx";
 
-const Navbar = () => {
+const Navbar = ({ user }) => {
   const [showMenu, setShowMenu] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(false); // Assume user is not logged in initially
   const [userName, setUserName] = useState("");
 
   const toggleMenu = () => {
@@ -15,7 +14,6 @@ const Navbar = () => {
   const handleLinkClick = () => {
     // Hide the menu when a link is clicked
     setShowMenu(false);
-    setLoggedIn(true);
   };
 
   return (
@@ -39,9 +37,9 @@ const Navbar = () => {
             <div onClick={handleLinkClick}>Budget</div>
           </Link>
 
-          {loggedIn ? (
+          {user.id ? (
             <>
-              <Logout setLoggedIn={setLoggedIn} />
+              <Logout />
             </>
           ) : (
             <>

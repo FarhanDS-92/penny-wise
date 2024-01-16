@@ -93,6 +93,11 @@ Navbar
   margin: 10px 0;
 }
 
+#logout {
+  cursor: pointer;
+}
+
+
 /* 
 *************************************************************
 Login / Register
@@ -363,6 +368,7 @@ Media Queries
 
 /*  Medium screens (tablets) */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+
   /* Additional styles for medium screens */
   body {
     font-size: 15px;
