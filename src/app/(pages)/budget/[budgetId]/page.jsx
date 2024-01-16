@@ -3,7 +3,10 @@ import Link from "next/link.js";
 import NewExpense from "@/app/components/AddExpense.jsx";
 import NewCapital from "@/app/components/AddCapital.jsx";
 import NewGoal from "@/app/components/AddGoal.jsx";
-import TotalSaved from "@/app/components/GoalTotalSaved.jsx";
+import EditExpense from "@/app/components/EditExpense.jsx";
+import EditCapital from "@/app/components/EditCapital.jsx";
+import Delete from "@/app/components/Delete.jsx";
+import EditGoal from "@/app/components/EditGoal.jsx";
 
 export default async function budgetDetails({ params }) {
   const { budgetId } = params;
@@ -95,14 +98,12 @@ export default async function budgetDetails({ params }) {
         {categories.map((category) => {
           return (
             <div className="expenseBreakdown">
-              <p className="expenseCategory">{category.name}</p>
+              <div>
+                <p className="expenseCategory">{category.name}</p>
+                <Delete id={category.id} path={"categories"} />
+              </div>
               {category.expenses.map((expense) => {
-                return (
-                  <div className="expense" key={expense.id}>
-                    <p>{expense.name}</p>
-                    <p>${expense.cost}</p>
-                  </div>
-                );
+                return <EditExpense expense={expense} key={expense.id} />;
               })}
             </div>
           );
@@ -112,12 +113,7 @@ export default async function budgetDetails({ params }) {
           <div>Monthly total: ${totalCapital}</div>
         </div>
         {capital.map((capital) => {
-          return (
-            <div className="capital" key={capital.id}>
-              <p>{capital.name}</p>
-              <p>${capital.amount}</p>
-            </div>
-          );
+          return <EditCapital capital={capital} key={capital.id} />;
         })}
         <div className="monthBreakdown">
           <div>GOALS</div>
@@ -126,19 +122,7 @@ export default async function budgetDetails({ params }) {
           </div>
         </div>
         {goals.map((goal) => {
-          return (
-            <div className="goal" key={goal.id}>
-              <div>
-                <p>{goal.name}</p>
-              </div>
-              <div className="goalAmount">
-                <TotalSaved goal={goal} />
-                <p>
-                  ${goal.allocated}/${goal.cost}
-                </p>
-              </div>
-            </div>
-          );
+          return <EditGoal goal={goal} />;
         })}
       </div>
       <Link className="budgetButton" href={`/budget`}>
