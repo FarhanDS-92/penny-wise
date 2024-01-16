@@ -6,7 +6,6 @@ import Link from "next/link.js";
 export default function Register() {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
-	const [email, setEmail] = useState("");
 	const [isPopUp, setIsPopUp] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
 
@@ -20,7 +19,6 @@ export default function Register() {
 			method: "POST",
 			body: JSON.stringify({
 				username,
-				email,
 				password,
 			}),
 		});
@@ -48,18 +46,15 @@ export default function Register() {
 					<h3>Register</h3>
 					<br />
 					<input
+						className="input-login-size"
 						placeholder="Username"
 						onChange={(e) => setUsername(e.target.value)}
 						value={username}
 					/>
 					<br />
+
 					<input
-						placeholder="Email"
-						onChange={(e) => setEmail(e.target.value)}
-						value={email}
-					/>
-					<br />
-					<input
+						className="input-login-size"
 						value={password}
 						placeholder="Password"
 						onChange={(e) => setPassword(e.target.value)}
@@ -78,16 +73,14 @@ export default function Register() {
 						)}
 					</button>
 					<br />
-					<div className="">
-						<span className="link-login-register">
-							Already Registered Click here{" "}
-							<Link
-								href={"/login"}
-								style={{ textDecoration: "none", fontSize: "12px" }}>
-								Login
-							</Link>
-							to login
-						</span>
+					<div className="link-login-register">
+						Already Registered Click{" "}
+						<Link
+							href={"/login"}
+							style={{ textDecoration: "none", fontSize: "12px" }}>
+							<span className="click-here">here </span>
+						</Link>
+						to login
 					</div>
 
 					<p>{error}</p>

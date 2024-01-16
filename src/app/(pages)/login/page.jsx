@@ -6,7 +6,6 @@ import Link from "next/link.js";
 export default function Login() {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
-	const [email, setEmail] = useState("");
 	const [isPopUp, setIsPopUp] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState("");
@@ -20,7 +19,6 @@ export default function Login() {
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({
 				username,
-				email,
 				password,
 			}),
 		});
@@ -48,18 +46,15 @@ export default function Login() {
 				<br />
 				<form onSubmit={handleLogin}>
 					<input
+						className="input-login-size "
 						placeholder="Username"
 						onChange={(e) => setUsername(e.target.value)}
 						value={username}
 					/>
 					<br />
+
 					<input
-						placeholder="Email"
-						onChange={(e) => setEmail(e.target.value)}
-						value={email}
-					/>
-					<br />
-					<input
+						className="input-login-size "
 						placeholder="Password"
 						onChange={(e) => setPassword(e.target.value)}
 						value={password}
@@ -80,15 +75,14 @@ export default function Login() {
 						)}
 					</button>
 					<br />
-					<div className="">
-						<span className="link-login-register">
-							New to Penny Wise? Click here to{" "}
-							<Link
-								href={"/register"}
-								style={{ textDecoration: "none", fontSize: "12px" }}>
-								Register
-							</Link>
-						</span>
+					<div className="link-login-register">
+						New to Penny Wise? Click{" "}
+						<Link
+							href={"/register"}
+							style={{ textDecoration: "none", fontSize: "12px" }}>
+							<span className="click-here">here </span>
+						</Link>
+						to register
 					</div>
 
 					<p>{error}</p>

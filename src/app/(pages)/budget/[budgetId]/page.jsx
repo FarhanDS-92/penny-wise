@@ -3,6 +3,7 @@ import Link from "next/link.js";
 import loading from "../loading.jsx";
 import NewExpense from "@/app/components/AddExpense.jsx";
 import { fetchUser } from "@/lib/fetchUser.js";
+import CreateBudget from "@/app/components/CreateBudget.jsx";
 
 export default async function budgetDetails({ params }) {
   const { budgetId } = params;
