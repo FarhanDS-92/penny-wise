@@ -29,6 +29,7 @@ button {
   font-weight: bold;
   border: none;
   box-shadow: 3px 3px #7f8c8d;
+  cursor: pointer;
 }
 
 /* 
@@ -68,8 +69,8 @@ Navbar
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 5%;
-  left: 90;
+  top: 7%;
+  right: 0;
   background-color: #a1acbb;
   padding: 10px;
   opacity: 0;
@@ -79,8 +80,9 @@ Navbar
 }
 
 .menuLinks.show {
-  width: 200px;
+  width: 210px;
   opacity: 1;
+  margin-left: -10px;
   visibility: visible;
   transition: opacity 0.5s;
 }
@@ -337,11 +339,11 @@ Media Queries
 
   .menuLinks {
     .menuLinks {
-      display: none;
+      display: flex;
       flex-direction: column;
       position: absolute;
-      top: calc(100% + 10px);
-      left: 0;
+      top: 10%;
+      right: 0;
       background-color: #a1acbb;
       padding: 10px;
       z-index: 1;
