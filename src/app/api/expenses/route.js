@@ -5,7 +5,7 @@ import { fetchUser } from "@/lib/fetchUser.js";
 export async function POST(req, res) {
   try {
     const user = await fetchUser();
-    const { name, cost, description, categoryId } = await req.json();
+    const { name, cost, categoryId, budgetId } = await req.json();
 
     if (!user.id) {
       return NextResponse.json({ success: false, error: "You must login." });
@@ -14,7 +14,7 @@ export async function POST(req, res) {
     if (!name || !cost) {
       return NextResponse.json({
         success: false,
-        error: "You must provide a name and cost.",
+        error: "You must provide a name and dollar amount.",
       });
     }
 
@@ -22,9 +22,9 @@ export async function POST(req, res) {
       data: {
         name,
         cost,
-        description,
         categoryId,
         userId: user.id,
+        budgetId,
       },
     });
 

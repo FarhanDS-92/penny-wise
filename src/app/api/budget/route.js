@@ -11,6 +11,27 @@ export async function POST(req, res) {
       return NextResponse.json({ success: false, error: "You must login." });
     }
 
+    if (!month || !year) {
+      return NextResponse.json({
+        success: false,
+        error: "You must provide a month and year",
+      });
+    }
+
+    if (month === NaN || year === NaN) {
+      return NextResponse.json({
+        success: false,
+        error: "Month and year both have to be a number",
+      });
+    }
+
+    if (month.length > 2 || year.length !== 4 || month > 12 || month < 1) {
+      return NextResponse.json({
+        success: false,
+        error: "Please enter a valid month and year MM / YYYY",
+      });
+    }
+
     const checkBudget = await prisma.budget.findFirst({
       where: {
         month,

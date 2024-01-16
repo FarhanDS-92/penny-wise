@@ -5,16 +5,16 @@ import { fetchUser } from "@/lib/fetchUser.js";
 export async function POST(req, res) {
   try {
     const user = await fetchUser();
-    const { name, cost, description, completeBy } = await req.json();
+    const { name, cost, budgetId, allocated } = await req.json();
 
     if (!user.id) {
       return NextResponse.json({ success: false, error: "You must login." });
     }
 
-    if (!name || !cost || !completeBy) {
+    if (!name || !cost) {
       return NextResponse.json({
         success: false,
-        error: "You must provide a name, cost, and date.",
+        error: "You must provide a name and cost.",
       });
     }
 
@@ -22,9 +22,9 @@ export async function POST(req, res) {
       data: {
         name,
         cost,
-        description,
-        completeBy,
+        budgetId,
         userId: user.id,
+        allocated,
       },
     });
 

@@ -1,6 +1,9 @@
 import { prisma } from "@/lib/prisma.js";
 import Link from "next/link.js";
-import loading from "../loading.jsx";
+import NewExpense from "@/app/components/AddExpense.jsx";
+import NewCapital from "@/app/components/AddCapital.jsx";
+import NewGoal from "@/app/components/AddGoal.jsx";
+import TotalSaved from "@/app/components/GoalTotalSaved.jsx";
 
 export default async function budgetDetails({ params }) {
   const { budgetId } = params;
@@ -125,11 +128,15 @@ export default async function budgetDetails({ params }) {
         {goals.map((goal) => {
           return (
             <div className="goal" key={goal.id}>
-              <p>{goal.name}</p>
-              <p>
-                ${goal.allocated}/${goal.cost}
-              </p>
-              <p>{goal.description}</p>
+              <div>
+                <p>{goal.name}</p>
+              </div>
+              <div className="goalAmount">
+                <TotalSaved goal={goal} />
+                <p>
+                  ${goal.allocated}/${goal.cost}
+                </p>
+              </div>
             </div>
           );
         })}
@@ -137,6 +144,11 @@ export default async function budgetDetails({ params }) {
       <Link className="budgetButton" href={`/budget`}>
         <button>Budget Overview</button>
       </Link>
+
+      <NewExpense budgetId={budgetId} categories={categories} />
+      <NewCapital budgetId={budgetId} />
+      <NewGoal budgetId={budgetId} />
     </div>
   );
+  1;
 }

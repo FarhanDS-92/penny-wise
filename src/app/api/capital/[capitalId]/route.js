@@ -27,7 +27,7 @@ export async function PUT(req, res) {
   try {
     const user = await fetchUser();
     const { capitalId } = res.params;
-    const { name, amount, description } = await req.json();
+    const { name, amount } = await req.json();
 
     if (!user.id) {
       return NextResponse.json({ success: false, error: "You must login." });
@@ -40,7 +40,6 @@ export async function PUT(req, res) {
       data: {
         name,
         amount,
-        description,
       },
     });
 
