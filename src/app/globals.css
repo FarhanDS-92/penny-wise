@@ -12,13 +12,16 @@ Universal Section
 	text-decoration: none;
 }
 
-body {
+html {
 	background-image: url("/background.png");
 	/* background by SVGBackgrounds.com */
 	background-position: center;
 	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
 	background-size: cover;
-	height: 100%;
+	min-height: 100%;
 }
 
 button {
