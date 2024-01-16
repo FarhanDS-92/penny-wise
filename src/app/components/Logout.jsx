@@ -1,4 +1,3 @@
-import Link from "next/link.js";
 import { useRouter } from "next/navigation.js";
 
 export default function Logout({ setLoggedIn }) {
