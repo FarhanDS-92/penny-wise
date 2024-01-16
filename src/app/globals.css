@@ -13,29 +13,29 @@ Universal Section
 }
 
 html {
-  background-image: url("/background.png");
-  /* background by SVGBackgrounds.com */
-  background-position: center;
-  background-repeat: no-repeat;
-  -webkit-background-repeat: no-repeat;
-  -moz-background-repeat: no-repeat;
-  -o-background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  min-height: 100%;
+	background-image: url("/background.png");
+	/* background by SVGBackgrounds.com */
+	background-position: center;
+	background-repeat: no-repeat;
+	-webkit-background-repeat: no-repeat;
+	-moz-background-repeat: no-repeat;
+	-o-background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	min-height: 100%;
 }
 
 button {
-  background-color: #e07416;
-  color: white;
-  padding: 5px;
-  font-size: 15px;
-  font-weight: bold;
-  border: none;
-  box-shadow: 3px 3px #7f8c8d;
-  cursor: pointer;
+	background-color: #e07416;
+	color: white;
+	padding: 5px;
+	font-size: 15px;
+	font-weight: bold;
+	border: none;
+	box-shadow: 3px 3px #7f8c8d;
+	cursor: pointer;
 }
 
 /* 
@@ -45,62 +45,62 @@ Navbar
 */
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #e8eaea;
-  padding: 10px;
-  color: white;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #e8eaea;
+	padding: 10px;
+	color: white;
 }
 
 .centerLogo {
-  text-align: center;
+	text-align: center;
 }
 
 .centerLogo img {
-  max-width: 200px;
+	max-width: 200px;
 }
 
 .rightSide {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
 }
 
 .hamburgerMenu {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .menuLinks {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 7%;
-  right: 0;
-  background-color: #a1acbb;
-  padding: 10px;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.5s, visibility 0s linear 0.5s;
-  z-index: 1;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 7%;
+	right: 0;
+	background-color: #a1acbb;
+	padding: 10px;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.5s, visibility 0s linear 0.5s;
+	z-index: 1;
 }
 
 .menuLinks.show {
-  width: 210px;
-  opacity: 1;
-  margin-left: -10px;
-  visibility: visible;
-  transition: opacity 0.5s;
+	width: 210px;
+	opacity: 1;
+	margin-left: -10px;
+	visibility: visible;
+	transition: opacity 0.5s;
 }
 
 .menuLinks a {
-  color: white;
-  text-decoration: none;
-  margin: 10px 0;
+	color: white;
+	text-decoration: none;
+	margin: 10px 0;
 }
 
 #logout {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 /* 
@@ -110,13 +110,13 @@ Login / Register
 */
 
 .overlay {
-  display: flex;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
 }
 
 .popup {
@@ -131,33 +131,33 @@ Login / Register
 }
 
 .close {
-  color: #7f8c8d;
-  text-decoration: none;
-  cursor: pointer;
-  display: flex;
-  justify-content: flex-end;
+	color: #7f8c8d;
+	text-decoration: none;
+	cursor: pointer;
+	display: flex;
+	justify-content: flex-end;
 }
 
 .link-login-register {
-  font-size: 13px;
+	font-size: 13px;
 }
 
 .click-here {
-  margin-top: 50px;
-  color: orange;
-  font-size: 16px;
+	margin-top: 50px;
+	color: orange;
+	font-size: 16px;
 }
 
 form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 .input-login-size {
-  width: 230px;
-  height: 30px;
+	width: 230px;
+	height: 30px;
 }
 
 .btn-login {
@@ -174,6 +174,7 @@ form {
 	text-align: center;
 	font-size: 12px;
 }
+
 .error-login {
 	margin-top: 5px;
 	font-size: 12px;
@@ -187,9 +188,9 @@ Loading Page loading.jsx
 */
 
 .loader {
-  display: flex;
-  justify-content: center;
-  margin-top: 150px;
+	display: flex;
+	justify-content: center;
+	margin-top: 150px;
 }
 
 /* 
@@ -198,19 +199,19 @@ Create Budget
 ************************************************************* 
 */
 .center-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 20px;
 }
 
 .popup-create-budget {
-  width: 300px;
-  height: 200px;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  padding: 10px;
+	width: 300px;
+	height: 200px;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	padding: 10px;
 }
 
 .submit-cancel-btn {
@@ -220,9 +221,9 @@ Create Budget
 }
 
 .month-year-input {
-  display: block;
-  margin: 5px;
-  padding: 5px;
+	display: block;
+	margin: 5px;
+	padding: 5px;
 }
 
 /* 
@@ -241,42 +242,43 @@ Budget Overview Page
 }
 
 .budgetYear {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  background-color: #23a9a4;
-  color: white;
-  padding: 5px;
-  border-bottom: 1px solid white;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	background-color: #23a9a4;
+	color: white;
+	padding: 5px;
+	border-bottom: 1px solid white;
 }
 
 .monthList {
-  display: block;
+	display: block;
 }
 
 .monthList {
 	max-height: 0;
 	overflow: hidden;
 	transition: max-height 0.3s ease-out;
-  }
-  
-  .monthList.open {
-	max-height: 1000px; /* Set an appropriate max-height value */
-  }
-  
+}
+
+.monthList.open {
+	max-height: 1000px;
+	/* Set an appropriate max-height value */
+}
+
 
 .budgetMonth {
-  border-bottom: 1px dotted black;
-  display: flex;
-  color: black;
-  justify-content: space-between;
-  padding: 15px 15px 5px 15px;
+	border-bottom: 1px dotted black;
+	display: flex;
+	color: black;
+	justify-content: space-between;
+	padding: 15px 15px 5px 15px;
 }
 
 .budgetMonth:hover {
-  background-color: #e7842d;
-  color: white;
-  font-weight: bolder;
+	background-color: #e7842d;
+	color: white;
+	font-weight: bolder;
 }
 
 /* 
@@ -286,81 +288,81 @@ Budget Id Page
 */
 
 .monthPage {
-  margin: auto;
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+	margin: auto;
+	width: 90%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
 }
 
 .monthOverview {
-  width: 100%;
-  margin-top: 20px;
-  background-color: #e8eaea;
+	width: 100%;
+	margin-top: 20px;
+	background-color: #e8eaea;
 }
 
 .monthYear {
-  display: flex;
-  justify-content: space-between;
-  background-color: #23a9a4;
-  color: white;
-  padding: 10px;
-  border-bottom: 1px solid white;
+	display: flex;
+	justify-content: space-between;
+	background-color: #23a9a4;
+	color: white;
+	padding: 10px;
+	border-bottom: 1px solid white;
 }
 
 .monthBreakdown {
-  display: flex;
-  justify-content: space-between;
-  color: black;
-  padding: 15px 15px 5px 15px;
-  border-bottom: 1px solid white;
-  background-color: #7f8c8d;
-  color: white;
-  font-weight: bold;
+	display: flex;
+	justify-content: space-between;
+	color: black;
+	padding: 15px 15px 5px 15px;
+	border-bottom: 1px solid white;
+	background-color: #7f8c8d;
+	color: white;
+	font-weight: bold;
 }
 
 .expenseBreakdown {
-  display: flex;
-  flex-direction: column;
-  color: black;
+	display: flex;
+	flex-direction: column;
+	color: black;
 }
 
 .expenseCategory {
-  padding: 15px 15px 5px 15px;
-  border-bottom: 1px dotted black;
-  background-color: #23a9a4;
-  color: white;
+	padding: 15px 15px 5px 15px;
+	border-bottom: 1px dotted black;
+	background-color: #23a9a4;
+	color: white;
 }
 
 .budgetItem {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 15px 5px 15px;
-  border-bottom: 1px dotted black;
+	display: flex;
+	justify-content: space-between;
+	padding: 15px 15px 5px 15px;
+	border-bottom: 1px dotted black;
 }
 
 .budgetItem:hover {
-  background-color: #e7842d;
-  color: white;
-  font-weight: bolder;
+	background-color: #e7842d;
+	color: white;
+	font-weight: bolder;
 }
 
 .goalAmount {
-  display: flex;
-  gap: 5px;
-  align-items: center;
+	display: flex;
+	gap: 5px;
+	align-items: center;
 }
 
 .goalButton {
-  background-color: #23a9a4;
-  color: white;
-  box-shadow: none;
-  font-weight: bold;
-  padding: 0px 5px;
+	background-color: #23a9a4;
+	color: white;
+	box-shadow: none;
+	font-weight: bold;
+	padding: 0px 5px;
 }
 
 .budgetButton {
-  margin-top: 10px;
+	margin-top: 10px;
 }
 
 /* 
@@ -372,55 +374,55 @@ Media Queries
 /* Small screens */
 @media only screen and (max-width: 768px) {
 
-  body {
-    font-size: 14px;
-  }
+	body {
+		font-size: 14px;
+	}
 
-  .centerLogo {
-    flex: 2;
-  }
+	.centerLogo {
+		flex: 2;
+	}
 
-  .hamburgerMenu {
-    display: block;
-    font-size: 20px;
-    margin-right: 10px;
-  }
+	.hamburgerMenu {
+		display: block;
+		font-size: 20px;
+		margin-right: 10px;
+	}
 
-  .rightSide {
-    position: relative;
-  }
+	.rightSide {
+		position: relative;
+	}
 
-  .menuLinks {
-    .menuLinks {
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      top: 10%;
-      right: 0;
-      background-color: #a1acbb;
-      padding: 10px;
-      z-index: 1;
-    }
-  }
+	.menuLinks {
+		.menuLinks {
+			display: flex;
+			flex-direction: column;
+			position: absolute;
+			top: 10%;
+			right: 0;
+			background-color: #a1acbb;
+			padding: 10px;
+			z-index: 1;
+		}
+	}
 
-  .menuLinks a {
-    margin: 10px 0;
-    color: white;
-    text-decoration: none;
-  }
+	.menuLinks a {
+		margin: 10px 0;
+		color: white;
+		text-decoration: none;
+	}
 
-  .menuLinks.show {
-    display: flex;
-  }
+	.menuLinks.show {
+		display: flex;
+	}
 }
 
 /*  Medium screens (tablets) */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
 
-  /* Additional styles for medium screens */
-  body {
-    font-size: 15px;
-  }
+	/* Additional styles for medium screens */
+	body {
+		font-size: 15px;
+	}
 }
 
 /*  Large screens (desktops) */
