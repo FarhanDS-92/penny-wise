@@ -13,29 +13,29 @@ Universal Section
 }
 
 html {
-	background-image: url("/background.png");
-	/* background by SVGBackgrounds.com */
-	background-position: center;
-	background-repeat: no-repeat;
-	-webkit-background-repeat: no-repeat;
-	-moz-background-repeat: no-repeat;
-	-o-background-repeat: no-repeat;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	min-height: 100%;
+  background-image: url("/background.png");
+  /* background by SVGBackgrounds.com */
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-repeat: no-repeat;
+  -moz-background-repeat: no-repeat;
+  -o-background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100%;
 }
 
 button {
-	background-color: #e07416;
-	color: white;
-	padding: 5px;
-	font-size: 15px;
-	font-weight: bold;
-	border: none;
-	box-shadow: 3px 3px #7f8c8d;
-	cursor: pointer;
+  background-color: #e07416;
+  color: white;
+  padding: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  box-shadow: 3px 3px #7f8c8d;
+  cursor: pointer;
 }
 
 /* 
@@ -86,11 +86,11 @@ Navbar
 }
 
 .menuLinks.show {
-	width: 210px;
-	opacity: 1;
-	margin-left: -10px;
-	visibility: visible;
-	transition: opacity 0.5s;
+  width: 210px;
+  opacity: 1;
+  margin-left: -10px;
+  visibility: visible;
+  transition: opacity 0.5s;
 }
 
 .menuLinks a {
@@ -120,14 +120,14 @@ Login / Register
 }
 
 .popup {
-	margin-top: 30px;
-	width: 295px;
-	height: 280px;
-	background-color: #fff;
-	padding: 20px;
-	border-radius: 5px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-	text-align: center;
+  margin-top: 30px;
+  width: 295px;
+  height: 280px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
 }
 
 .close {
@@ -161,23 +161,23 @@ form {
 }
 
 .btn-login {
-	padding: 5px;
-	background-color: orange;
-	color: #fff;
-	border: none;
-	border-radius: 3px;
-	cursor: pointer;
-	width: 80px;
-	height: 30px;
-	border-radius: 20px;
-	text-align: center;
-	font-size: 12px;
+  padding: 5px;
+  background-color: orange;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  width: 80px;
+  height: 30px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 12px;
 }
 
 .error-login {
-	margin-top: 5px;
-	font-size: 12px;
-	color: #e07416;
+  margin-top: 5px;
+  font-size: 12px;
+  color: #e07416;
 }
 
 /* 
@@ -214,9 +214,9 @@ Create Budget
 }
 
 .submit-cancel-btn {
-	display: flex;
-	gap: 20px;
-	margin-top: 10px;
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
 }
 
 .month-year-input {
@@ -232,11 +232,11 @@ Budget Overview Page
 */
 
 .budget-section {
-	width: 90%;
-	margin: auto;
-	margin-top: 20px;
-	background-color: #e8eaea;
-	cursor: pointer;
+  width: 90%;
+  margin: auto;
+  margin-top: 20px;
+  background-color: #e8eaea;
+  cursor: pointer;
 }
 
 .budgetYear {
@@ -254,14 +254,14 @@ Budget Overview Page
 }
 
 .monthList {
-	max-height: 0;
-	overflow: hidden;
-	transition: max-height 0.3s ease-out;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
 }
 
 .monthList.open {
-	max-height: 1000px;
-	/* Set an appropriate max-height value */
+  max-height: 1000px;
+  /* Set an appropriate max-height value */
 }
 
 
@@ -333,16 +333,16 @@ Budget Id Page
 }
 
 .budgetItem {
-	display: flex;
-	justify-content: space-between;
-	padding: 15px 15px 5px 15px;
-	border-bottom: 1px dotted black;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 15px 5px 15px;
+  border-bottom: 1px dotted black;
 }
 
 .budgetItem:hover {
-	background-color: #e7842d;
-	color: white;
-	font-weight: bolder;
+  background-color: #e7842d;
+  color: white;
+  font-weight: bolder;
 }
 
 .goalAmount {
@@ -375,25 +375,12 @@ Budget Id Page
   align-items: center;
   text-align: center;
   padding-top: 50px;
+  gap: 20px;
 }
 
-h2 {
-  font-size: 2em;
-}
-
-p {
-  font-size: 1.5em;
-}
-	
-body {
-		font-size: 14px;
-	}
-
-
-
-Link {
-  text-decoration: underline;
-  font-size: 1.5em;
+.piggy {
+  margin-top: 20px;
+  max-height: 500px;
 }
 
 /* 
@@ -448,10 +435,11 @@ Media Queries
 
 /*  Medium screens (tablets) */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-	/* Additional styles for medium screens */
-	body {
-		font-size: 15px;
-	}
+
+  /* Additional styles for medium screens */
+  body {
+    font-size: 15px;
+  }
 }
 
 /*  Large screens (desktops) */
@@ -461,4 +449,3 @@ Media Queries
     font-size: 18px;
   }
 }
-

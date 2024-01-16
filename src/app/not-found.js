@@ -1,15 +1,23 @@
+import { fetchUser } from "@/lib/fetchUser.js";
 import Link from "next/link.js";
 
-export default function NotFound() {
+export default async function NotFound() {
+  const user = await fetchUser();
+
   return (
     <main className="notfound">
-      <h2>404 error.</h2>
+      <h1>404 error.</h1>
       <p>We could not find the page you were looking for.</p>
       <p>
-        Go back to the <Link href="/">Main</Link> page
+        Go back to the
+        {user.id ? (
+          <Link href="/budget"> HOMEPAGE</Link>
+        ) : (
+          <Link href="/"> HOMEPAGE</Link>
+        )}
       </p>
 
-      <img src="/brokenpig.jpg" />
+      <img src="/piggy.gif" className="piggy" />
     </main>
   );
 }
