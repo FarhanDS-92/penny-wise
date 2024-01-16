@@ -71,7 +71,6 @@ export default function CreateBudget() {
 								onChange={(e) => setYear(e.target.value)}
 							/>
 						</label>
-						<p>{error}</p>
 
 						<span className="submit-cancel-btn">
 							<button type="submit">Submit</button>
@@ -79,6 +78,7 @@ export default function CreateBudget() {
 								Cancel
 							</button>
 						</span>
+						<p className="error-login">{error}</p>
 					</form>
 				</div>
 			)}
