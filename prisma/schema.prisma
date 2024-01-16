@@ -75,8 +75,6 @@ model Goal {
   name      String
   cost      Int
   allocated Int
-  month     Int
-  year      Int
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId    String
   createdAt DateTime @default(now())
