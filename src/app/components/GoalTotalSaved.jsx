@@ -63,7 +63,7 @@ export default function TotalSaved({ goal }) {
         +
       </button>
       <div style={{ display: addGoal ? "block" : "none" }}>
-        <form onSubmit={handleSubmitFunds}>
+        <form id="addFunds" onSubmit={handleSubmitFunds}>
           <input
             type="text"
             required
@@ -72,8 +72,14 @@ export default function TotalSaved({ goal }) {
             onChange={(e) => setGoalAmount(e.target.value)}
           />
 
-          <button type="Submit">Submit</button>
-          <button onClick={handleAddGoal} type="button">
+          <button className="edit-deleteButton" type="Submit">
+            Submit
+          </button>
+          <button
+            className="edit-deleteButton"
+            onClick={handleAddGoal}
+            type="button"
+          >
             Cancel
           </button>
           <p>{error}</p>

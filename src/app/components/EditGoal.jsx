@@ -53,23 +53,24 @@ export default function EditGoal({ goal }) {
             <p>
               ${goal.allocated}/${goal.cost}
             </p>
-            <button onClick={handleEdit}>Edit</button>
+            <button className="edit-deleteButton" onClick={handleEdit}>
+              Edit
+            </button>
             <Delete id={goal.id} path={"goals"} />
           </div>
         </div>
       ) : (
-        <form className="budgetItem" onSubmit={handleSubmit}>
-          <div>
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => {
-                setName(e.target.value);
-              }}
-            />
-          </div>
+        <form className="budgetForm" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
+          />
+
           <p>{error}</p>
-          <div>
+          <div className="formBox">
             <input
               type="text"
               value={allocated}
@@ -86,8 +87,14 @@ export default function EditGoal({ goal }) {
               }}
             />
 
-            <button type="submit">Submit</button>
-            <button type="button" onClick={handleEdit}>
+            <button className="edit-deleteButton" type="submit">
+              Submit
+            </button>
+            <button
+              className="edit-deleteButton"
+              type="button"
+              onClick={handleEdit}
+            >
               Cancel
             </button>
             <Delete id={goal.id} path={"goals"} />

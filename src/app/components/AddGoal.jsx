@@ -49,7 +49,7 @@ export default function NewGoal({ budgetId }) {
     <div>
       <button onClick={handleAddGoal}>Add New Goal</button>
       <div style={{ display: addGoal ? "block" : "none" }}>
-        <form onSubmit={handleSubmitGoal}>
+        <form className="addNewForm" onSubmit={handleSubmitGoal}>
           <input
             type="text"
             required

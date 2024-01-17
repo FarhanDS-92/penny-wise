@@ -122,7 +122,6 @@ Login / Register
 .popup {
   margin-top: 30px;
   width: 295px;
-  height: 280px;
   background-color: #fff;
   padding: 20px;
   border-radius: 5px;
@@ -144,8 +143,9 @@ Login / Register
 
 .click-here {
   margin-top: 50px;
-  color: orange;
-  font-size: 16px;
+  color: #e07416;
+  font-weight: bolder;
+  font-size: 15px;
 }
 
 form {
@@ -264,7 +264,6 @@ Budget Overview Page
   /* Set an appropriate max-height value */
 }
 
-
 .budgetMonth {
   border-bottom: 1px dotted black;
   display: flex;
@@ -326,6 +325,8 @@ Budget Id Page
 }
 
 .expenseCategory {
+  display: flex;
+  justify-content: space-between;
   padding: 15px 15px 5px 15px;
   border-bottom: 1px dotted black;
   background-color: #23a9a4;
@@ -359,7 +360,61 @@ Budget Id Page
   padding: 0px 5px;
 }
 
-.budgetButton {
+#edit-deleteBox {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.edit-deleteButton {
+  background-color: #616767;
+  padding: 3px;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.budgetForm {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 15px 15px 5px 15px;
+  border-bottom: 1px dotted black;
+}
+
+.formBox {
+  display: flex;
+  gap: 5px;
+}
+
+#addFunds {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+#budgetIdButtons {
+  width: 100%;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#addNewButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.addNewForm {
+  display: flex;
+  gap: 5px;
+  padding: 15px 0px;
+}
+
+#newExpense {
   margin-top: 10px;
 }
 
@@ -435,7 +490,6 @@ Media Queries
 
 /*  Medium screens (tablets) */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-
   /* Additional styles for medium screens */
   body {
     font-size: 15px;
@@ -444,7 +498,6 @@ Media Queries
 
 /*  Large screens (desktops) */
 @media screen and (min-width: 1024px) {
-
   body {
     font-size: 18px;
   }

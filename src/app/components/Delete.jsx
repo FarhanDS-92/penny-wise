@@ -13,7 +13,7 @@ export default function Delete({ id, path }) {
   }
 
   return (
-    <button type="button" onClick={handleDelete}>
+    <button className="edit-deleteButton" type="button" onClick={handleDelete}>
       Delete
     </button>
   );

@@ -98,8 +98,8 @@ export default async function budgetDetails({ params }) {
         {categories.map((category) => {
           return (
             <div className="expenseBreakdown">
-              <div>
-                <p className="expenseCategory">{category.name}</p>
+              <div className="expenseCategory">
+                <p>{category.name}</p>
                 <Delete id={category.id} path={"categories"} />
               </div>
               {category.expenses.map((expense) => {
@@ -125,13 +125,16 @@ export default async function budgetDetails({ params }) {
           return <EditGoal goal={goal} />;
         })}
       </div>
-      <Link className="budgetButton" href={`/budget`}>
-        <button>Budget Overview</button>
-      </Link>
-
-      <NewExpense budgetId={budgetId} categories={categories} />
-      <NewCapital budgetId={budgetId} />
-      <NewGoal budgetId={budgetId} />
+      <div id="budgetIdButtons">
+        <div id="addNewButtons">
+          <NewExpense budgetId={budgetId} categories={categories} />
+          <NewCapital budgetId={budgetId} />
+          <NewGoal budgetId={budgetId} />
+        </div>
+        <Link href={`/budget`}>
+          <button>Budget Overview</button>
+        </Link>
+      </div>
     </div>
   );
   1;
