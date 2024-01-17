@@ -25,7 +25,12 @@ export async function POST(req, res) {
       });
     }
 
-    if (month.length > 2 || year.length !== 4 || month > 12 || month < 1) {
+    if (
+      month.toString().length > 2 ||
+      year.toString().length !== 4 ||
+      Math.floor(month) > 12 ||
+      Math.floor(month) < 1
+    ) {
       return NextResponse.json({
         success: false,
         error: "Please enter a valid month and year MM / YYYY",
