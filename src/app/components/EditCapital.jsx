@@ -32,7 +32,6 @@ export default function EditCapital({ capital }) {
     if (data.error) {
       setError(data.error);
     }
-
     setEdit(false);
     setError("");
     router.refresh();

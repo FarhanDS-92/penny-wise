@@ -7,8 +7,6 @@ export default function Register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  const [isPopUp, setIsPopUp] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
 
   const [error, setError] = useState("");
 
@@ -33,7 +31,6 @@ export default function Register() {
     router.refresh();
   }
   const handleClosePopup = () => {
-    setIsPopUp(true);
     router.push("/");
     router.refresh();
   };
@@ -73,17 +70,8 @@ export default function Register() {
           />
 
           <br />
-          <button type="submit" disabled={isLoading} className="btn-login">
-            {isLoading ? (
-              <img
-                src="spinball.svg"
-                alt="gear-loading"
-                width={40}
-                height={40}
-              />
-            ) : (
-              "Register"
-            )}
+          <button type="submit" className="btn-login">
+            Register
           </button>
           <br />
           <div className="link-login-register">

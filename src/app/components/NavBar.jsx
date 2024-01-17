@@ -5,27 +5,34 @@ import Logout from "./Logout.jsx";
 import { FaHome } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 
-const Navbar = ({ user }) => {
+export default function Navbar({ user }) {
   const [showMenu, setShowMenu] = useState(false);
-  const [userName, setUserName] = useState("");
 
-  const toggleMenu = () => {
+  function toggleMenu() {
     setShowMenu(!showMenu);
-  };
+  }
 
-  const handleLinkClick = () => {
+  function handleLinkClick() {
     // Hide the menu when a link is clicked
     setShowMenu(false);
-  };
+  }
 
   return (
     <nav className="navbar">
       <div className="leftSide">
-        <Link href="/" passHref>
-          <div className="homeLink" onClick={handleLinkClick}>
-            <FaHome />
-          </div>
-        </Link>
+        {user.id ? (
+          <Link href="/budget" passHref>
+            <div className="homeLink" onClick={handleLinkClick}>
+              <FaHome />
+            </div>
+          </Link>
+        ) : (
+          <Link href="/" passHref>
+            <div className="homeLink" onClick={handleLinkClick}>
+              <FaHome />
+            </div>
+          </Link>
+        )}
       </div>
       <div className="centerLogo">
         <img src="/penny-wise-4.png" alt="Your Logo" />
@@ -35,14 +42,14 @@ const Navbar = ({ user }) => {
           <GiHamburgerMenu />
         </div>
         <div className={`menuLinks ${showMenu ? "show" : ""}`}>
-          <Link href="/budget" passHref>
-            <div onClick={handleLinkClick}>Budget</div>
-          </Link>
+          {user.id ? (
+            <Link href="/budget" passHref>
+              <div onClick={handleLinkClick}>Budget</div>
+            </Link>
+          ) : null}
 
           {user.id ? (
-            <>
-              <Logout />
-            </>
+            <Logout />
           ) : (
             <>
               <Link href="/login" passHref>
@@ -57,6 +64,4 @@ const Navbar = ({ user }) => {
       </div>
     </nav>
   );
-};
-
-export default Navbar;
+}

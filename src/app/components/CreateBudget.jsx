@@ -22,7 +22,9 @@ export default function CreateBudget() {
         year: +year,
       }),
     });
+
     const data = await response.json();
+
     if (data.error) {
       setError(data.error);
       router.refresh();
@@ -32,9 +34,11 @@ export default function CreateBudget() {
       setIsCreate(false);
       router.refresh();
     }
+
     router.push("/budget");
     router.refresh();
   }
+
   function handleCancel() {
     setMonth("");
     setYear("");

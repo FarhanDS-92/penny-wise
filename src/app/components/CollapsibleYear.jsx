@@ -6,9 +6,11 @@ import BudgetLink from "./BudgetLink.jsx";
 
 export default function CollapsibleYear({ budgetYear }) {
   const [isOpen, setIsOpen] = useState(false);
+
   const toggleMonthList = () => {
     setIsOpen(!isOpen);
   };
+
   function yearlyExpense(budgetYear) {
     let totalExpense = 0;
 
@@ -17,7 +19,6 @@ export default function CollapsibleYear({ budgetYear }) {
         totalExpense += budgetYear[i].expenses[j].cost;
       }
     }
-
     return totalExpense;
   }
 

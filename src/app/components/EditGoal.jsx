@@ -35,7 +35,6 @@ export default function EditGoal({ goal }) {
     if (data.error) {
       setError(data.error);
     }
-
     setEdit(false);
     setError("");
     router.refresh();

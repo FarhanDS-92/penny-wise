@@ -32,7 +32,6 @@ export default function EditExpense({ expense }) {
     if (data.error) {
       setError(data.error);
     }
-
     setEdit(false);
     setError("");
     router.refresh();

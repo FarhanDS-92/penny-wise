@@ -18,6 +18,23 @@ export async function POST(req, res) {
       });
     }
 
+    const goalCheck = await prisma.goal.findFirst({
+      where: {
+        name,
+        cost,
+        budgetId,
+        allocated,
+        userId: user.id,
+      },
+    });
+
+    if (goalCheck) {
+      return NextResponse.json({
+        success: false,
+        error: "The goal you are creating already exists",
+      });
+    }
+
     const goal = await prisma.goal.create({
       data: {
         name,

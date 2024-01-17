@@ -18,6 +18,23 @@ export async function POST(req, res) {
       });
     }
 
+    const expenseCheck = await prisma.expense.findFirst({
+      where: {
+        name,
+        cost,
+        categoryId,
+        userId: user.id,
+        budgetId,
+      },
+    });
+
+    if (expenseCheck) {
+      return NextResponse.json({
+        success: false,
+        error: "The expense you are creating already exists",
+      });
+    }
+
     const expense = await prisma.expense.create({
       data: {
         name,
