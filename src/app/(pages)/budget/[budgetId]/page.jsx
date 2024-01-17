@@ -6,7 +6,7 @@ import NewGoal from "@/app/components/AddGoal.jsx";
 import EditExpense from "@/app/components/EditExpense.jsx";
 import EditCapital from "@/app/components/EditCapital.jsx";
 import Delete from "@/app/components/Delete.jsx";
-import EditGoal from "@/app/components/EditGoal.jsx";
+import CollapsibleGoal from "@/app/components/CollapsibleGoal.jsx";
 
 export default async function budgetDetails({ params }) {
   const { budgetId } = params;
@@ -115,15 +115,11 @@ export default async function budgetDetails({ params }) {
         {capital.map((capital) => {
           return <EditCapital capital={capital} key={capital.id} />;
         })}
-        <div className="monthBreakdown">
-          <div>GOALS</div>
-          <div>
-            Monthly total: ${goalToDate}/${totalGoals}
-          </div>
-        </div>
-        {goals.map((goal) => {
-          return <EditGoal goal={goal} />;
-        })}
+        <CollapsibleGoal
+          goals={goals}
+          goalToDate={goalToDate}
+          totalGoals={totalGoals}
+        />
       </div>
       <div id="budgetIdButtons">
         <div id="addNewButtons">
