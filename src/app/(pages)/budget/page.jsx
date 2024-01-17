@@ -5,6 +5,7 @@ import CollapsibleYear from "@/app/components/CollapsibleYear.jsx";
 
 export default async function budget() {
   const user = await fetchUser();
+
   const budgets = await prisma.budget.findMany({
     where: {
       userId: user.id,
@@ -35,8 +36,6 @@ export default async function budget() {
       separatedArrays[index].push(obj);
     }
   });
-
-  // console.log(separatedArrays[0]);
 
   return (
     <div>
