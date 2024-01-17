@@ -4,9 +4,9 @@ import NewExpense from "@/app/components/AddExpense.jsx";
 import NewCapital from "@/app/components/AddCapital.jsx";
 import NewGoal from "@/app/components/AddGoal.jsx";
 import EditExpense from "@/app/components/EditExpense.jsx";
-import EditCapital from "@/app/components/EditCapital.jsx";
-import Delete from "@/app/components/Delete.jsx";
+import CollapsibleCapital from "@/app/components/CollapsibleCapital.jsx";
 import CollapsibleGoal from "@/app/components/CollapsibleGoal.jsx";
+
 
 export default async function budgetDetails({ params }) {
   const { budgetId } = params;
@@ -108,13 +108,7 @@ export default async function budgetDetails({ params }) {
             </div>
           );
         })}
-        <div className="monthBreakdown">
-          <div>CAPITAL</div>
-          <div>Monthly total: ${totalCapital}</div>
-        </div>
-        {capital.map((capital) => {
-          return <EditCapital capital={capital} key={capital.id} />;
-        })}
+        <CollapsibleCapital capital={capital} totalCapital={totalCapital} />
         <CollapsibleGoal
           goals={goals}
           goalToDate={goalToDate}
