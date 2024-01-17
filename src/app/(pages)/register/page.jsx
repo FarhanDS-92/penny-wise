@@ -7,8 +7,6 @@ export default function Register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  const [isPopUp, setIsPopUp] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
 
   const [error, setError] = useState("");
 
@@ -33,7 +31,6 @@ export default function Register() {
     router.refresh();
   }
   const handleClosePopup = () => {
-    setIsPopUp(true);
     router.push("/");
     router.refresh();
   };
@@ -72,31 +69,20 @@ export default function Register() {
               placeholder="Password"
               onChange={(e) => setPassword(e.target.value)}
             />
-
-            <br />
-            <button type="submit" disabled={isLoading} className="btn-login">
-              {isLoading ? (
-                <img
-                  src="spinball.svg"
-                  alt="gear-loading"
-                  width={40}
-                  height={40}
-                />
-              ) : (
-                "Register"
-              )}
-            </button>
-            <br />
-            <div className="link-login-register">
-              <p>Already Registered?</p>
-              <p>
-                <Link className="click-here" href={"/login"}>
-                  Click here{" "}
-                </Link>
-                to login
-              </p>
-            </div>
-
+          <br />
+          <button type="submit" className="btn-login">
+            Register
+          </button>
+          <br />
+          <div className="link-login-register">
+            <p>Already Registered?</p>
+            <p>
+              <Link className="click-here" href={"/login"}>
+                Click here{" "}
+              </Link>
+              to login
+            </p>
+          </div>
             <p className="error-login">{error}</p>
           </form>
         </div>

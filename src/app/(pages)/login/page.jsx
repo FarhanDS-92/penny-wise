@@ -6,7 +6,6 @@ import Link from "next/link.js";
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [isPopUp, setIsPopUp] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -30,11 +29,11 @@ export default function Login() {
     router.push("/budget");
     router.refresh();
   }
-  const handleClosePopup = () => {
-    setIsPopUp(true);
+
+  function handleClosePopup() {
     router.push("/");
     router.refresh();
-  };
+  }
 
   return (
     <div className="overlay">

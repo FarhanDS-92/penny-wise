@@ -18,6 +18,22 @@ export async function POST(req, res) {
       });
     }
 
+    const checkCapital = await prisma.capital.findFirst({
+      where: {
+        name,
+        amount,
+        userId: user.id,
+        budgetId,
+      },
+    });
+
+    if (checkCapital) {
+      return NextResponse.json({
+        success: false,
+        error: "The goal you are creating already exists.",
+      });
+    }
+
     const capital = await prisma.capital.create({
       data: {
         name,

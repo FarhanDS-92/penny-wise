@@ -45,7 +45,6 @@ export default function TotalSaved({ goal }) {
     if (data.error) {
       return setError(data.error);
     }
-
     setAddGoal(!addGoal);
     setGoalAmount("");
     setError("");

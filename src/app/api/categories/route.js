@@ -18,6 +18,21 @@ export async function POST(req, res) {
       });
     }
 
+    const categoryCheck = await prisma.category.findFirst({
+      where: {
+        name,
+        budgetId,
+        userId: user.id,
+      },
+    });
+
+    if (categoryCheck) {
+      return NextResponse.json({
+        success: false,
+        error: "The category you are creating already exists",
+      });
+    }
+
     const category = await prisma.category.create({
       data: {
         name,
