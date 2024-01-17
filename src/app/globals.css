@@ -122,7 +122,6 @@ Login / Register
 .popup {
   margin-top: 30px;
   width: 295px;
-  height: 280px;
   background-color: #fff;
   padding: 20px;
   border-radius: 5px;
@@ -144,8 +143,9 @@ Login / Register
 
 .click-here {
   margin-top: 50px;
-  color: orange;
-  font-size: 16px;
+  color: #e07416;
+  font-weight: bolder;
+  font-size: 15px;
 }
 
 form {

@@ -27,7 +27,7 @@ export default function Login() {
     if (info.error) {
       return setError(info.error);
     }
-    router.push("/");
+    router.push("/budget");
     router.refresh();
   }
   const handleClosePopup = () => {
@@ -76,14 +76,13 @@ export default function Login() {
           </button>
           <br />
           <div className="link-login-register">
-            New to Penny Wise? Click{" "}
-            <Link
-              href={"/register"}
-              style={{ textDecoration: "none", fontSize: "12px" }}
-            >
-              <span className="click-here">here </span>
-            </Link>
-            to register
+            <p>New to Penny-Wise?</p>
+            <p>
+              <Link className="click-here" href={"/register"}>
+                Click here{" "}
+              </Link>
+              to register
+            </p>
           </div>
 
           <p className="error-login">{error}</p>
