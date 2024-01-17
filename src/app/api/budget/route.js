@@ -39,6 +39,7 @@ export async function POST(req, res) {
 
     const checkBudget = await prisma.budget.findFirst({
       where: {
+        userId: user.id,
         month,
         year,
       },
