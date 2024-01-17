@@ -3,8 +3,6 @@
 import { useState } from "react";
 import Link from "next/link.js";
 import BudgetLink from "./BudgetLink.jsx";
-import { IoIosArrowDown } from "react-icons/io";
-import { IoIosArrowUp } from "react-icons/io";
 
 export default function CollapsibleYear({ budgetYear }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,10 +26,7 @@ export default function CollapsibleYear({ budgetYear }) {
     <div>
       <div className="budgetYear" onClick={toggleMonthList}>
         <h2>{budgetYear[0].year}</h2>
-        <h3>
-          Yearly Expense: ${yearlyExpense(budgetYear)}{" "}
-          {isOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}
-        </h3>
+        <h2>Yearly Expense: ${yearlyExpense(budgetYear)}</h2>
       </div>
       <div className={`monthList ${isOpen ? "open" : ""}`}>
         {budgetYear.map((budgetMonth) => (
