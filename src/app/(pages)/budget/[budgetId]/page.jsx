@@ -3,9 +3,10 @@ import Link from "next/link.js";
 import NewExpense from "@/app/components/AddExpense.jsx";
 import NewCapital from "@/app/components/AddCapital.jsx";
 import NewGoal from "@/app/components/AddGoal.jsx";
-import EditCapital from "@/app/components/EditCapital.jsx";
-import EditGoal from "@/app/components/EditGoal.jsx";
 import CollapsibleExpenses from "@/app/components/CollapsibleExpenses.jsx";
+import CollapsibleCapital from "@/app/components/CollapsibleCapital.jsx";
+import CollapsibleGoal from "@/app/components/CollapsibleGoal.jsx";
+
 
 export default async function budgetDetails({ params }) {
 	const { budgetId } = params;
@@ -83,45 +84,34 @@ export default async function budgetDetails({ params }) {
 		return <div></div>;
 	}
 
-	return (
-		<div className="monthPage">
-			<div className="monthOverview">
-				<div className="monthYear">
-					<h1>{months[budget.month - 1]}</h1>
-					<h1>{budget.year}</h1>
-				</div>
+  return (
+    <div className="monthPage">
+      <div className="monthOverview">
+        <div className="monthYear">
+          <h1>{months[budget.month - 1]}</h1>
+          <h1>{budget.year}</h1>
+        </div>
 				<CollapsibleExpenses
 					totalExpense={totalExpense}
 					categories={categories}
 				/>
-				<div className="monthBreakdown">
-					<div>CAPITAL</div>
-					<div>Monthly total: ${totalCapital}</div>
-				</div>
-				{capital.map((capital) => {
-					return <EditCapital capital={capital} key={capital.id} />;
-				})}
-				<div className="monthBreakdown">
-					<div>GOALS</div>
-					<div>
-						Monthly total: ${goalToDate}/${totalGoals}
-					</div>
-				</div>
-				{goals.map((goal) => {
-					return <EditGoal goal={goal} />;
-				})}
-			</div>
-			<div id="budgetIdButtons">
-				<div id="addNewButtons">
-					<NewExpense budgetId={budgetId} categories={categories} />
-					<NewCapital budgetId={budgetId} />
-					<NewGoal budgetId={budgetId} />
-				</div>
-				<Link href={`/budget`}>
-					<button>Budget Overview</button>
-				</Link>
-			</div>
-		</div>
-	);
-	1;
+        <CollapsibleCapital capital={capital} totalCapital={totalCapital} />
+        <CollapsibleGoal
+          goals={goals}
+          goalToDate={goalToDate}
+          totalGoals={totalGoals}
+        />
+      </div>
+      <div id="budgetIdButtons">
+        <div id="addNewButtons">
+          <NewExpense budgetId={budgetId} categories={categories} />
+          <NewCapital budgetId={budgetId} />
+          <NewGoal budgetId={budgetId} />
+        </div>
+        <Link href={`/budget`}>
+          <button>Budget Overview</button>
+        </Link>
+      </div>
+    </div>
+  );
 }
