@@ -3,10 +3,9 @@ import Link from "next/link.js";
 import NewExpense from "@/app/components/AddExpense.jsx";
 import NewCapital from "@/app/components/AddCapital.jsx";
 import NewGoal from "@/app/components/AddGoal.jsx";
-import EditExpense from "@/app/components/EditExpense.jsx";
+import CollapsibleExpenses from "@/app/components/CollapsibleExpenses.jsx";
 import CollapsibleCapital from "@/app/components/CollapsibleCapital.jsx";
 import CollapsibleGoal from "@/app/components/CollapsibleGoal.jsx";
-
 
 export default async function budgetDetails({ params }) {
   const { budgetId } = params;
@@ -91,23 +90,10 @@ export default async function budgetDetails({ params }) {
           <h1>{months[budget.month - 1]}</h1>
           <h1>{budget.year}</h1>
         </div>
-        <div className="monthBreakdown">
-          <div>EXPENSES</div>
-          <div>Monthly total: ${totalExpense}</div>
-        </div>
-        {categories.map((category) => {
-          return (
-            <div className="expenseBreakdown">
-              <div className="expenseCategory">
-                <p>{category.name}</p>
-                <Delete id={category.id} path={"categories"} />
-              </div>
-              {category.expenses.map((expense) => {
-                return <EditExpense expense={expense} key={expense.id} />;
-              })}
-            </div>
-          );
-        })}
+        <CollapsibleExpenses
+          totalExpense={totalExpense}
+          categories={categories}
+        />
         <CollapsibleCapital capital={capital} totalCapital={totalCapital} />
         <CollapsibleGoal
           goals={goals}
@@ -127,5 +113,4 @@ export default async function budgetDetails({ params }) {
       </div>
     </div>
   );
-  1;
 }

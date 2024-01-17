@@ -2,8 +2,6 @@
 
 import { useState } from "react";
 import EditGoal from "@/app/components/EditGoal.jsx";
-import { IoIosArrowDown } from "react-icons/io";
-import { IoIosArrowUp } from "react-icons/io";
 
 export default function CollapsibleGoal({ goals, goalToDate, totalGoals }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,8 +15,7 @@ export default function CollapsibleGoal({ goals, goalToDate, totalGoals }) {
       <div className="monthBreakdown" onClick={toggleMonthList}>
         <div>GOALS</div>
         <div>
-          Monthly total: ${goalToDate}/${totalGoals}{" "}
-          {isOpen ? <IoIosArrowDown /> : <IoIosArrowUp />}
+          Monthly total: ${goalToDate}/${totalGoals}
         </div>
       </div>
       {goals.map((goal) => {
