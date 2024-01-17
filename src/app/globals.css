@@ -67,7 +67,9 @@ Navbar
   align-items: center;
 }
 
-.hamburgerMenu {
+.homeLink {
+  font-size: 30px;
+  color: black;
   cursor: pointer;
 }
 

@@ -2,6 +2,8 @@
 import Link from "next/link";
 import { useState } from "react";
 import Logout from "./Logout.jsx";
+import { FaHome } from "react-icons/fa";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = ({ user }) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -21,7 +23,7 @@ const Navbar = ({ user }) => {
       <div className="leftSide">
         <Link href="/" passHref>
           <div className="homeLink" onClick={handleLinkClick}>
-            <img src="/homeicon.png" alt="" style={{ height: "45px" }} />
+            <FaHome />
           </div>
         </Link>
       </div>
@@ -29,8 +31,8 @@ const Navbar = ({ user }) => {
         <img src="/penny-wise-4.png" alt="Your Logo" />
       </div>
       <div className="rightSide">
-        <div className="hamburgerMenu">
-          <img src="/hamburger.svg" alt="" onClick={toggleMenu} />
+        <div className="homeLink" onClick={toggleMenu}>
+          <GiHamburgerMenu />
         </div>
         <div className={`menuLinks ${showMenu ? "show" : ""}`}>
           <Link href="/budget" passHref>
