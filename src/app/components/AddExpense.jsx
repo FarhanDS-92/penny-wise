@@ -83,11 +83,11 @@ export default function NewExpense({ budgetId, categories }) {
     <div>
       <button onClick={handleAddExpense}>Add New Expense</button>
 
-      <div style={{ display: addExpense ? "block" : "none" }}>
+      <div id="newExpense" style={{ display: addExpense ? "block" : "none" }}>
         <button onClick={handleAddCategory}>Create New Category</button>
 
         <div style={{ display: addCategory ? "block" : "none" }}>
-          <form onSubmit={handleSubmitCategory}>
+          <form className="addNewForm" onSubmit={handleSubmitCategory}>
             <input
               type="text"
               required
@@ -101,7 +101,7 @@ export default function NewExpense({ budgetId, categories }) {
           </form>
         </div>
 
-        <form onSubmit={handleSubmitExpense}>
+        <form className="addNewForm" onSubmit={handleSubmitExpense}>
           <select
             required
             name="categories"

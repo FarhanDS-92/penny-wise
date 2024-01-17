@@ -47,7 +47,7 @@ export default function NewCapital({ budgetId }) {
     <div>
       <button onClick={handleAddCapital}>Add New Capital</button>
       <div style={{ display: addCapital ? "block" : "none" }}>
-        <form onSubmit={handleSubmitCapital}>
+        <form className="addNewForm" onSubmit={handleSubmitCapital}>
           <input
             type="text"
             required

@@ -408,6 +408,16 @@ Budget Id Page
   gap: 10px;
 }
 
+.addNewForm {
+  display: flex;
+  gap: 5px;
+  padding: 15px 0px;
+}
+
+#newExpense {
+  margin-top: 10px;
+}
+
 /* 
 *************************************************************
 404 Page
