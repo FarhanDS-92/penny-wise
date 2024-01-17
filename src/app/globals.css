@@ -313,7 +313,7 @@ Budget Id Page
   display: flex;
   justify-content: space-between;
   color: black;
-  padding: 15px 15px 5px 15px;
+  padding: 15px 5px 5px 15px;
   border-bottom: 1px solid white;
   background-color: #7f8c8d;
   color: white;
