@@ -17,7 +17,10 @@ export default function CollapsibleCapital({ capital, totalCapital }) {
       </div>
       {capital.map((capital) => {
         return (
-          <div key={capital.id} className={`monthList ${isOpen ? "open" : ""}`}>
+          <div
+            key={capital.id}
+            className={`monthList ${!isOpen ? "open" : ""}`}
+          >
             <EditCapital capital={capital} />
           </div>
         );
