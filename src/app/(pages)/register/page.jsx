@@ -41,34 +41,34 @@ export default function Register() {
         <span className="close" onClick={handleClosePopup}>
           x
         </span>
-        <form onSubmit={handleRegister}>
+        <div>
           <h3>Register</h3>
           <br />
-          <input
-            className="input-login-size"
-            placeholder="Username"
-            onChange={(e) => setUsername(e.target.value)}
-            value={username}
-          />
+          <form className="login-regForm" onSubmit={handleRegister}>
+            <input
+              className="input-login-size"
+              placeholder="Username"
+              onChange={(e) => setUsername(e.target.value)}
+              value={username}
+            />
 
-          <br />
+            <br />
 
-          <input
-            className="input-login-size"
-            value={email}
-            placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
+            <input
+              className="input-login-size"
+              value={email}
+              placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
+            />
 
-          <br />
+            <br />
 
-          <input
-            className="input-login-size"
-            value={password}
-            placeholder="Password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-
+            <input
+              className="input-login-size"
+              value={password}
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
           <br />
           <button type="submit" className="btn-login">
             Register
@@ -83,9 +83,9 @@ export default function Register() {
               to login
             </p>
           </div>
-
-          <p className="error-login">{error}</p>
-        </form>
+            <p className="error-login">{error}</p>
+          </form>
+        </div>
       </div>
     </div>
   );

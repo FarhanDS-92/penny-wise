@@ -41,51 +41,53 @@ export default function Login() {
         <span className="close" onClick={handleClosePopup}>
           x
         </span>
-        <h3>Log In</h3>
-        <br />
-        <form onSubmit={handleLogin}>
-          <input
-            className="input-login-size "
-            placeholder="Username"
-            onChange={(e) => setUsername(e.target.value)}
-            value={username}
-          />
+        <div>
+          <h3>Log In</h3>
           <br />
+          <form className="login-regForm" onSubmit={handleLogin}>
+            <input
+              className="input-login-size "
+              placeholder="Username"
+              onChange={(e) => setUsername(e.target.value)}
+              value={username}
+            />
+            <br />
 
-          <input
-            className="input-login-size "
-            placeholder="Password"
-            onChange={(e) => setPassword(e.target.value)}
-            value={password}
-            type="password"
-          />
-          <br />
+            <input
+              className="input-login-size "
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
+              type="password"
+            />
+            <br />
 
-          <button type="submit" disabled={isLoading} className="btn-login">
-            {isLoading ? (
-              <img
-                src="spinball.svg"
-                alt="gear-loading"
-                width={40}
-                height={40}
-              />
-            ) : (
-              "Login"
-            )}
-          </button>
-          <br />
-          <div className="link-login-register">
-            <p>New to Penny-Wise?</p>
-            <p>
-              <Link className="click-here" href={"/register"}>
-                Click here{" "}
-              </Link>
-              to register
-            </p>
-          </div>
+            <button type="submit" disabled={isLoading} className="btn-login">
+              {isLoading ? (
+                <img
+                  src="spinball.svg"
+                  alt="gear-loading"
+                  width={40}
+                  height={40}
+                />
+              ) : (
+                "Login"
+              )}
+            </button>
+            <br />
+            <div className="link-login-register">
+              <p>New to Penny-Wise?</p>
+              <p>
+                <Link className="click-here" href={"/register"}>
+                  Click here{" "}
+                </Link>
+                to register
+              </p>
+            </div>
 
-          <p className="error-login">{error}</p>
-        </form>
+            <p className="error-login">{error}</p>
+          </form>
+        </div>
       </div>
     </div>
   );

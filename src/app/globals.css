@@ -38,6 +38,13 @@ button {
   cursor: pointer;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 /* 
 *************************************************************
 Navbar
@@ -113,22 +120,25 @@ Login / Register
 
 .overlay {
   display: flex;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  align-items: center;
   justify-content: center;
 }
 
 .popup {
   margin-top: 30px;
-  width: 295px;
+  width: 300px;
   background-color: #fff;
-  padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   text-align: center;
+}
+
+@-moz-document url-prefix() {
+  .login-regForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
 .close {
@@ -137,6 +147,7 @@ Login / Register
   cursor: pointer;
   display: flex;
   justify-content: flex-end;
+  padding: 15px;
 }
 
 .link-login-register {
@@ -144,17 +155,9 @@ Login / Register
 }
 
 .click-here {
-  margin-top: 50px;
   color: #e07416;
   font-weight: bolder;
   font-size: 15px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 .input-login-size {
@@ -163,12 +166,9 @@ form {
 }
 
 .btn-login {
-  padding: 5px;
-  background-color: orange;
+  background-color: #e7842d;
   color: #fff;
-  border: none;
   border-radius: 3px;
-  cursor: pointer;
   width: 80px;
   height: 30px;
   border-radius: 20px;
@@ -177,7 +177,7 @@ form {
 }
 
 .error-login {
-  margin-top: 5px;
+  margin: 5px 0px 15px 0px;
   font-size: 12px;
   color: #e07416;
 }
