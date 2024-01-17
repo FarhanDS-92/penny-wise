@@ -44,25 +44,26 @@ export default function EditCapital({ capital }) {
         <div className="budgetItem">
           <p>{capital.name}</p>
 
-          <div>
+          <div id="edit-deleteBox">
             <p>${capital.amount}</p>
-            <button onClick={handleEdit}>Edit</button>
+            <button className="edit-deleteButton" onClick={handleEdit}>
+              Edit
+            </button>
             <Delete id={capital.id} path={"capital"} />
           </div>
         </div>
       ) : (
-        <form className="budgetItem" onSubmit={handleSubmit}>
-          <div>
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => {
-                setName(e.target.value);
-              }}
-            />
-          </div>
+        <form className="budgetForm" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
+          />
+
           <p>{error}</p>
-          <div>
+          <div className="formBox">
             <input
               type="text"
               value={amount}
@@ -71,8 +72,14 @@ export default function EditCapital({ capital }) {
               }}
             />
 
-            <button type="submit">Submit</button>
-            <button type="button" onClick={handleEdit}>
+            <button className="edit-deleteButton" type="submit">
+              Submit
+            </button>
+            <button
+              className="edit-deleteButton"
+              type="button"
+              onClick={handleEdit}
+            >
               Cancel
             </button>
             <Delete id={capital.id} path={"capital"} />

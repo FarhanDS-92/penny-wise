@@ -264,7 +264,6 @@ Budget Overview Page
   /* Set an appropriate max-height value */
 }
 
-
 .budgetMonth {
   border-bottom: 1px dotted black;
   display: flex;
@@ -326,6 +325,8 @@ Budget Id Page
 }
 
 .expenseCategory {
+  display: flex;
+  justify-content: space-between;
   padding: 15px 15px 5px 15px;
   border-bottom: 1px dotted black;
   background-color: #23a9a4;
@@ -359,8 +360,52 @@ Budget Id Page
   padding: 0px 5px;
 }
 
-.budgetButton {
-  margin-top: 10px;
+#edit-deleteBox {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.edit-deleteButton {
+  background-color: #616767;
+  padding: 3px;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.budgetForm {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 15px 15px 5px 15px;
+  border-bottom: 1px dotted black;
+}
+
+.formBox {
+  display: flex;
+  gap: 5px;
+}
+
+#addFunds {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+#budgetIdButtons {
+  width: 100%;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#addNewButtons {
+  display: flex;
+  gap: 10px;
 }
 
 /* 
@@ -435,7 +480,6 @@ Media Queries
 
 /*  Medium screens (tablets) */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-
   /* Additional styles for medium screens */
   body {
     font-size: 15px;
@@ -444,7 +488,6 @@ Media Queries
 
 /*  Large screens (desktops) */
 @media screen and (min-width: 1024px) {
-
   body {
     font-size: 18px;
   }
