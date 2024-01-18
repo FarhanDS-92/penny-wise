@@ -35,7 +35,7 @@ export default function Navbar({ user }) {
         )}
       </div>
       <div className="centerLogo">
-        <img src="/penny-wise-4.png" alt="Your Logo" />
+        <img src="/light_mode_logo.png" alt="Penny Wise Logo" />
       </div>
       <div className="rightSide">
         <div className="homeLink" onClick={toggleMenu}>
