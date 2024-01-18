@@ -1,12 +1,26 @@
 /* 
 *************************************************************
+Imports
+************************************************************* 
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=PT+Serif&display=swap');
+
+/* font-family: 'Bebas Neue',
+sans-serif;
+font-family: 'PT Serif',
+serif; */
+
+
+/* 
+*************************************************************
 Universal Section
 ************************************************************* 
 */
 
 * {
   margin: 0px;
-  font-family: "Arial", sans-serif;
+  font-family: 'PT Serif', serif, sans-serif;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
@@ -112,6 +126,98 @@ Navbar
   cursor: pointer;
 }
 
+/* 
+*************************************************************
+Home Page
+************************************************************* 
+*/
+
+/* #homePage {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.snapShot {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.homeDetails-container {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.homeDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+  gap: 20px;
+}
+
+.arrowIcon {
+  font-size: 100px;
+  color: #e7842d;
+}
+
+.right {
+  animation: arrowRight 2s infinite;
+}
+
+.left {
+  animation: arrowLeft 2s infinite;
+}
+
+.snapShotImg {
+  width: 25%;
+}
+
+@keyframes arrowRight {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(100px);
+    /* Adjust the distance as needed */
+}
+
+100% {
+  transform: translateX(0);
+}
+}
+
+@keyframes arrowLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-100px);
+    /* Adjust the distance as needed */
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+*/
 /* 
 *************************************************************
 Login / Register
@@ -493,6 +599,7 @@ Media Queries
 
 /*  Medium screens (tablets) */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+
   /* Additional styles for medium screens */
   body {
     font-size: 15px;

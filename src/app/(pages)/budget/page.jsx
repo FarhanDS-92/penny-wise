@@ -38,13 +38,13 @@ export default async function budget() {
   });
 
   return (
-    <div>
+    <section>
       <CreateBudget />
-      <section className="budget-section">
+      <div className="budget-section">
         {separatedArrays.map((budgetYear) => (
           <CollapsibleYear key={budgetYear[0].year} budgetYear={budgetYear} />
         ))}
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }

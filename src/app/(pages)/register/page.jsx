@@ -36,7 +36,7 @@ export default function Register() {
   };
 
   return (
-    <div className="overlay">
+    <section className="overlay">
       <div className="popup">
         <span className="close" onClick={handleClosePopup}>
           x
@@ -69,24 +69,24 @@ export default function Register() {
               placeholder="Password"
               onChange={(e) => setPassword(e.target.value)}
             />
-          <br />
-          <button type="submit" className="btn-login">
-            Register
-          </button>
-          <br />
-          <div className="link-login-register">
-            <p>Already Registered?</p>
-            <p>
-              <Link className="click-here" href={"/login"}>
-                Click here{" "}
-              </Link>
-              to login
-            </p>
-          </div>
+            <br />
+            <button type="submit" className="btn-login">
+              Register
+            </button>
+            <br />
+            <div className="link-login-register">
+              <p>Already Registered?</p>
+              <p>
+                <Link className="click-here" href={"/login"}>
+                  Click here{" "}
+                </Link>
+                to login
+              </p>
+            </div>
             <p className="error-login">{error}</p>
           </form>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

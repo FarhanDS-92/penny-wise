@@ -84,7 +84,7 @@ export default async function budgetDetails({ params }) {
   }
 
   return (
-    <div className="monthPage">
+    <section className="monthPage">
       <div className="monthOverview">
         <div className="monthYear">
           <h1>{months[budget.month - 1]}</h1>
@@ -111,6 +111,6 @@ export default async function budgetDetails({ params }) {
           <button>Budget Overview</button>
         </Link>
       </div>
-    </div>
+    </section>
   );
 }

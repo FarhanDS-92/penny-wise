@@ -36,7 +36,7 @@ export default function Login() {
   }
 
   return (
-    <div className="overlay">
+    <section className="overlay">
       <div className="popup">
         <span className="close" onClick={handleClosePopup}>
           x
@@ -89,6 +89,6 @@ export default function Login() {
           </form>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
