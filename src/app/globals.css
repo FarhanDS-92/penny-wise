@@ -1,25 +1,12 @@
 /* 
 *************************************************************
-Imports
-************************************************************* 
-*/
-
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=PT+Serif&display=swap");
-
-/* font-family: 'Bebas Neue',
-sans-serif;
-font-family: 'PT Serif',
-serif; */
-
-/* 
-*************************************************************
 Universal Section
 ************************************************************* 
 */
 
 * {
   margin: 0px;
-  font-family: "PT Serif", serif, sans-serif;
+  font-family: "Arial", sans-serif;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
@@ -552,6 +539,7 @@ Media Queries
 
 /*  Medium screens (tablets) */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+
   /* Additional styles for medium screens */
   body {
     font-size: 15px;
