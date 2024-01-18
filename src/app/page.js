@@ -8,7 +8,7 @@ export default async function Home() {
 
   return (
     <section id="homePage">
-      {/* <div className="snapShot">
+      <div className="snapShot">
         <div className="homeDetails-container">
           <aside className="homeDetails">
             <h4>You Can Plan Your Budget Throughout The Years!</h4>
@@ -18,7 +18,6 @@ export default async function Home() {
               Achieve your financial objectives with ease!
             </p>
           </aside>
-          <PiArrowFatLineRightFill className="arrowIcon right" />
         </div>
 
         <img
@@ -48,9 +47,8 @@ export default async function Home() {
               informed decisions with ease!
             </p>
           </aside>
-          <PiArrowFatLineLeftFill className="arrowIcon left" />
         </div>
-      </div> */}
+      </div>
     </section>
   );
 }
