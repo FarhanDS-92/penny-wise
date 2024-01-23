@@ -6,7 +6,7 @@ import BudgetLink from "./BudgetLink.jsx";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 
-export default function CollapsibleYear({ budgetYear }) {
+export default function CollapsibleYear({ budgetYear, user }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMonthList = () => {
@@ -26,7 +26,10 @@ export default function CollapsibleYear({ budgetYear }) {
 
   return (
     <div>
-      <div className="budgetYear" onClick={toggleMonthList}>
+      <div
+        className={user.isDarkMode ? "budgetYear-dark" : "budgetYear"}
+        onClick={toggleMonthList}
+      >
         <h2>{budgetYear[0].year}</h2>
         <h3>
           Yearly Expense: ${yearlyExpense(budgetYear)}{" "}
@@ -36,7 +39,7 @@ export default function CollapsibleYear({ budgetYear }) {
       <div className={`monthList ${isOpen ? "open" : ""}`}>
         {budgetYear.map((budgetMonth) => (
           <Link key={budgetMonth.id} href={`/budget/${budgetMonth.id}`}>
-            <BudgetLink budget={budgetMonth} />
+            <BudgetLink budget={budgetMonth} user={user} />
           </Link>
         ))}
       </div>

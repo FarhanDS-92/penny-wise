@@ -1,4 +1,4 @@
-export default function BudgetLink({ budget }) {
+export default function BudgetLink({ budget, user }) {
   const months = [
     "January",
     "February",
@@ -25,7 +25,7 @@ export default function BudgetLink({ budget }) {
   }
 
   return (
-    <div className="budgetMonth">
+    <div className={user.isDarkMode ? "budgetMonth-dark" : "budgetMonth"}>
       <p>{`${months[budget.month - 1]}`}</p>
       <p>Monthly Expense: ${getTotalCost(budget)}</p>
     </div>

@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation.js";
 import { useState } from "react";
 
-export default function CreateBudget() {
+export default function CreateBudget({ user }) {
   const [isCreate, setIsCreate] = useState(false);
   const [month, setMonth] = useState("");
   const [year, setYear] = useState("");
@@ -49,6 +49,7 @@ export default function CreateBudget() {
     <div className="center-container">
       <button
         onClick={handleCreateBudget}
+        id={user.isDarkMode ? "button-dark" : "button-light"}
         style={{
           display: !isCreate ? "block" : "none",
         }}
@@ -56,12 +57,16 @@ export default function CreateBudget() {
         Create Budget
       </button>
       {isCreate && (
-        <div className="popup-create-budget">
+        <div
+          className={
+            user.isDarkMode ? "popup-create-budget-dark" : "popup-create-budget"
+          }
+        >
           <form onSubmit={handleSubmitBudget}>
             <label>
               Month:
               <input
-                className="							month-year-input"
+                className="month-year-input"
                 type="text"
                 value={month}
                 onChange={(e) => setMonth(e.target.value)}
@@ -78,8 +83,17 @@ export default function CreateBudget() {
             </label>
 
             <span className="submit-cancel-btn">
-              <button type="submit">Submit</button>
-              <button type="button" onClick={handleCancel}>
+              <button
+                id={user.isDarkMode ? "button-dark" : "button-light"}
+                type="submit"
+              >
+                Submit
+              </button>
+              <button
+                id={user.isDarkMode ? "button-dark" : "button-light"}
+                type="button"
+                onClick={handleCancel}
+              >
                 Cancel
               </button>
             </span>

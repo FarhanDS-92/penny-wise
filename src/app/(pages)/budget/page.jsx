@@ -39,10 +39,16 @@ export default async function budget() {
 
   return (
     <section>
-      <CreateBudget />
-      <div className="budget-section">
+      <CreateBudget user={user} />
+      <div
+        className={user.isDarkMode ? "budget-section-dark" : "budget-section"}
+      >
         {separatedArrays.map((budgetYear) => (
-          <CollapsibleYear key={budgetYear[0].year} budgetYear={budgetYear} />
+          <CollapsibleYear
+            key={budgetYear[0].year}
+            budgetYear={budgetYear}
+            user={user}
+          />
         ))}
       </div>
     </section>

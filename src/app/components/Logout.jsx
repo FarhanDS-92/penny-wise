@@ -11,9 +11,5 @@ export default function Logout() {
     router.refresh();
   }
 
-  return (
-    <div onClick={HandleLogout} id="logout">
-      Logout
-    </div>
-  );
+  return <div onClick={HandleLogout}>Logout</div>;
 }
