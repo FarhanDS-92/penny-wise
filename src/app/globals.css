@@ -499,6 +499,12 @@ Media Queries
   body {
     font-size: 14px;
   }
+  .budget-sect {
+    padding-top: 60px;
+  }
+  .overlay {
+    padding-top: 60px;
+  }
 
   .centerLogo {
     flex: 2;
@@ -515,16 +521,17 @@ Media Queries
   }
 
   .menuLinks {
-    .menuLinks {
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      top: 10%;
-      right: 0;
-      background-color: #a1acbb;
-      padding: 10px;
-      z-index: 1;
-    }
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 7%;
+    right: 0;
+    background-color: #a1acbb;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0s linear 0.5s;
+    z-index: 1;
   }
 
   .menuLinks a {
@@ -535,6 +542,69 @@ Media Queries
 
   .menuLinks.show {
     display: flex;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  .monthPage {
+    padding-top: 60px;
+  }
+
+  .monthYear {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .collapsible {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .collapsibleHeader {
+    padding: 10px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }
+
+  .collapsibleContent {
+    padding: 10px;
+    display: none;
+  }
+
+  .collapsibleContent.show {
+    display: block;
+  }
+
+  #addNewButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  button {
+    padding: 10px;
+    font-size: 16px;
+  }
+  .snapShot {
+    flex-direction: column;
+  }
+
+  .homeDetails-container {
+    width: 100%;
+  }
+
+  .snapShotImg {
+    width: 100%;
+  }
+
+  .home-register {
+    width: 100%;
   }
 }
 
