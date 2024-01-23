@@ -51,7 +51,7 @@ export default function () {
 
 						<div className="content">
 							<div className="contentBx">
-								<h3> ALEXANDRA HERNANDEZ </h3> <br />
+								<h3> CALYPSO HERNANDEZ </h3> <br />
 							</div>
 							<ul className="social-link">
 								<li style={{ "--i": 1 }}>
@@ -70,6 +70,7 @@ export default function () {
 						</div>
 					</div>
 				</div>
+
 				<div className="card_Container">
 					<div className="card">
 						<div className="imbBx">

@@ -474,16 +474,14 @@ Credit Page
 ************************************************************* 
 */
 .icon-credit-page {
-	width: 25px;
-	height: 25px;
+	width: 20px;
+	height: 20px;
 }
-
-
 
 .wrapper {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-around;
+	justify-content: center;
 }
 
 .title h4 {
@@ -491,10 +489,10 @@ Credit Page
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 20px;
-	width: 550px;
-	padding: 20px;
+	width: 450px;
+	padding: 15px;
 	color: #333131;
-	font-size: 50px;
+	font-size: 30px;
 	font-weight: 500;
 	letter-spacing: 1.2px;
 	word-spacing: 5px;
@@ -509,13 +507,13 @@ Credit Page
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	margin: 40px 0;
+	margin: 20px 0;
 }
 
 .card_Container .card {
 	position: relative;
-	width: 250px;
-	height: 300px;
+	width: 200px;
+	height: 250px;
 	margin: 20px;
 	overflow: hidden;
 	box-shadow: 0 30px 30px -20px rgba(0, 0, 0, 1),
@@ -536,7 +534,7 @@ Credit Page
 	position: absolute;
 	bottom: -160px;
 	width: 100%;
-	height: 100px;
+	height: 80px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -558,7 +556,7 @@ Credit Page
 	color: #fff;
 	letter-spacing: 2px;
 	font-weight: 500;
-	font-size: 15px;
+	font-size: 10px;
 	text-align: center;
 	margin: 20px 0 15px;
 	line-height: 1.1em;
@@ -575,7 +573,7 @@ Credit Page
 
 .content .social-link {
 	position: relative;
-	bottom: 10px;
+	bottom: 20px;
 	display: flex;
 }
 
