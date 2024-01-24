@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation.js";
 import { useState } from "react";
 
-export default function NewCapital({ budgetId }) {
+export default function NewCapital({ budgetId, user }) {
   const [addCapital, setAddCapital] = useState(false);
   const [capitalName, setCapitalName] = useState("");
   const [capitalAmount, setCapitalAmount] = useState("");
@@ -45,7 +45,12 @@ export default function NewCapital({ budgetId }) {
 
   return (
     <div>
-      <button onClick={handleAddCapital}>Add New Capital</button>
+      <button
+        id={user.isDarkMode ? "button-dark" : "button-light"}
+        onClick={handleAddCapital}
+      >
+        Add New Capital
+      </button>
       <div style={{ display: addCapital ? "block" : "none" }}>
         <form className="addNewForm" onSubmit={handleSubmitCapital}>
           <input

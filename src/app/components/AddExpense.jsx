@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation.js";
 import { useState } from "react";
 
-export default function NewExpense({ budgetId, categories }) {
+export default function NewExpense({ budgetId, categories, user }) {
   const [addExpense, setAddExpense] = useState(false);
   const [addCategory, setAddCategory] = useState(false);
   const [newCategory, setNewCategory] = useState("");
@@ -81,7 +81,12 @@ export default function NewExpense({ budgetId, categories }) {
 
   return (
     <div>
-      <button onClick={handleAddExpense}>Add New Expense</button>
+      <button
+        id={user.isDarkMode ? "button-dark" : "button-light"}
+        onClick={handleAddExpense}
+      >
+        Add New Expense
+      </button>
 
       <div id="newExpense" style={{ display: addExpense ? "block" : "none" }}>
         <button onClick={handleAddCategory}>Create New Category</button>

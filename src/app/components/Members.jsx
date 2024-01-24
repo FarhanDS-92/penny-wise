@@ -1,8 +1,11 @@
+import { fetchUser } from "@/lib/fetchUser.js";
 import Link from "next/link.js";
-export default function () {
+export default async function () {
+  const user = await fetchUser();
+
   return (
     <div>
-      <div className="title">
+      <div className={user.isDarkMode ? "title-dark" : "title"}>
         <h4>MEET OUR TEAM</h4>
       </div>
       <div className="wrapper">

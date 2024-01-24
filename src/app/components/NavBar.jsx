@@ -72,22 +72,22 @@ export default function Navbar({ user }) {
           className={`menuLinks ${showMenu ? "show" : ""}`}
         >
           {user.id ? (
-            <Link href="/budget" passHref>
-              <div
-                id={user.isDarkMode ? "nav-text-dark" : "nav-text"}
-                onClick={handleLinkClick}
-              >
-                Budget
-              </div>
-            </Link>
-          ) : null}
-          {user.id ? (
             <>
-              <Logout id={user.isDarkMode ? "nav-text-dark" : "nav-text"} />
               <div id="mode-switch" onClick={modeSwitch}>
                 {isDarkMode ? <FaSun /> : <FaMoon />}
               </div>
+              <Link href="/budget" passHref>
+                <div
+                  id={user.isDarkMode ? "nav-text-dark" : "nav-text"}
+                  onClick={handleLinkClick}
+                >
+                  Budget
+                </div>
+              </Link>
             </>
+          ) : null}
+          {user.id ? (
+            <Logout user={user} />
           ) : (
             <>
               <Link href="/login" passHref>
@@ -99,17 +99,17 @@ export default function Navbar({ user }) {
                 </div>
               </Link>
               <Link href="/register" passHref>
-                <div
-                  id={user.isDarkMode ? "nav-text-dark" : "nav-text"}
-                  onClick={handleLinkClick}
-                >
-                  Register
-                </div>
+                <div onClick={handleLinkClick}>Register</div>
               </Link>
             </>
           )}
           <Link href="/credit">
-            <div onClick={handleLinkClick}>Credit</div>
+            <div
+              id={user.isDarkMode ? "nav-text-dark" : "nav-text"}
+              onClick={handleLinkClick}
+            >
+              Credit
+            </div>
           </Link>
         </div>
       </div>

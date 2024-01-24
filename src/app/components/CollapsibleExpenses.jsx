@@ -6,7 +6,11 @@ import Delete from "./Delete.jsx";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 
-export default function CollapsibleExpenses({ totalExpense, categories }) {
+export default function CollapsibleExpenses({
+  totalExpense,
+  categories,
+  user,
+}) {
   const [isOpen, setIsOpen] = useState(false);
 
   function toggleMonthList() {
@@ -15,7 +19,10 @@ export default function CollapsibleExpenses({ totalExpense, categories }) {
 
   return (
     <>
-      <div className="monthBreakdown" onClick={toggleMonthList}>
+      <div
+        className={user.isDarkMode ? "monthBreakdown-dark" : "monthBreakdown"}
+        onClick={toggleMonthList}
+      >
         <div>EXPENSES</div>
         <div>
           Monthly total: ${totalExpense}{" "}
@@ -28,13 +35,23 @@ export default function CollapsibleExpenses({ totalExpense, categories }) {
             key={category.id}
             className={`monthList ${!isOpen ? "open" : ""}`}
           >
-            <div className="expenseBreakdown">
-              <div className="expenseCategory">
+            <div
+              className={
+                user.isDarkMode ? "expenseBreakdown-dark" : "expenseBreakdown"
+              }
+            >
+              <div
+                className={
+                  user.isDarkMode ? "expenseCategory-dark" : "expenseCategory"
+                }
+              >
                 <p>{category.name}</p>
                 <Delete id={category.id} path={"categories"} />
               </div>
               {category.expenses.map((expense) => {
-                return <EditExpense expense={expense} key={expense.id} />;
+                return (
+                  <EditExpense user={user} expense={expense} key={expense.id} />
+                );
               })}
             </div>
           </div>
