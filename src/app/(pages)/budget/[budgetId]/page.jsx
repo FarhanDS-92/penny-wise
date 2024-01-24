@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/prisma.js";
 import Link from "next/link.js";
+import { fetchUser } from "@/lib/fetchUser.js";
 import NewExpense from "@/app/components/AddExpense.jsx";
 import NewCapital from "@/app/components/AddCapital.jsx";
 import NewGoal from "@/app/components/AddGoal.jsx";
@@ -9,6 +10,7 @@ import CollapsibleGoal from "@/app/components/CollapsibleGoal.jsx";
 
 export default async function budgetDetails({ params }) {
   const { budgetId } = params;
+  const user = await fetchUser();
 
   const months = [
     "January",
@@ -85,17 +87,23 @@ export default async function budgetDetails({ params }) {
 
   return (
     <section className="monthPage">
-      <div className="monthOverview">
-        <div className="monthYear">
+      <div className={user.isDarkMode ? "monthOverview-dark" : "monthOverview"}>
+        <div className={user.isDarkMode ? "monthYear-dark" : "monthYear"}>
           <h1>{months[budget.month - 1]}</h1>
           <h1>{budget.year}</h1>
         </div>
         <CollapsibleExpenses
+          user={user}
           totalExpense={totalExpense}
           categories={categories}
         />
-        <CollapsibleCapital capital={capital} totalCapital={totalCapital} />
+        <CollapsibleCapital
+          user={user}
+          capital={capital}
+          totalCapital={totalCapital}
+        />
         <CollapsibleGoal
+          user={user}
           goals={goals}
           goalToDate={goalToDate}
           totalGoals={totalGoals}
@@ -103,12 +111,14 @@ export default async function budgetDetails({ params }) {
       </div>
       <div id="budgetIdButtons">
         <div id="addNewButtons">
-          <NewExpense budgetId={budgetId} categories={categories} />
-          <NewCapital budgetId={budgetId} />
-          <NewGoal budgetId={budgetId} />
+          <NewExpense budgetId={budgetId} categories={categories} user={user} />
+          <NewCapital budgetId={budgetId} user={user} />
+          <NewGoal budgetId={budgetId} user={user} />
         </div>
         <Link href={`/budget`}>
-          <button>Budget Overview</button>
+          <button id={user.isDarkMode ? "button-dark" : "button-light"}>
+            Budget Overview
+          </button>
         </Link>
       </div>
     </section>

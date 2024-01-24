@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation.js";
 import { useState } from "react";
 import Delete from "./Delete.jsx";
 
-export default function EditCapital({ capital }) {
+export default function EditCapital({ capital, user }) {
   const [name, setName] = useState(capital.name);
   const [amount, setAmount] = useState(capital.amount);
   const [error, setError] = useState("");
@@ -40,7 +40,7 @@ export default function EditCapital({ capital }) {
   return (
     <>
       {!edit ? (
-        <div className="budgetItem">
+        <div className={user.isDarkMode ? "budgetItem-dark" : "budgetItem"}>
           <p>{capital.name}</p>
 
           <div id="edit-deleteBox">

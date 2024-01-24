@@ -1,6 +1,6 @@
 import { useRouter } from "next/navigation.js";
 
-export default function Logout() {
+export default function Logout({ user }) {
   const router = useRouter();
 
   async function HandleLogout() {
@@ -11,5 +11,12 @@ export default function Logout() {
     router.refresh();
   }
 
-  return <div onClick={HandleLogout}>Logout</div>;
+  return (
+    <div
+      id={user.isDarkMode ? "nav-text-dark" : "nav-text"}
+      onClick={HandleLogout}
+    >
+      Logout
+    </div>
+  );
 }

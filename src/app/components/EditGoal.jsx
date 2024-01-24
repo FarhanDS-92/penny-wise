@@ -5,7 +5,7 @@ import { useState } from "react";
 import Delete from "./Delete.jsx";
 import TotalSaved from "./GoalTotalSaved.jsx";
 
-export default function EditGoal({ goal }) {
+export default function EditGoal({ goal, user }) {
   const [name, setName] = useState(goal.name);
   const [cost, setCost] = useState(goal.cost);
   const [allocated, setAllocated] = useState(goal.allocated);
@@ -43,7 +43,10 @@ export default function EditGoal({ goal }) {
   return (
     <>
       {!edit ? (
-        <div className="budgetItem" key={goal.id}>
+        <div
+          className={user.isDarkMode ? "budgetItem-dark" : "budgetItem"}
+          key={goal.id}
+        >
           <div>
             <p>{goal.name}</p>
           </div>

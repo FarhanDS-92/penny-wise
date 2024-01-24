@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation.js";
 import { useState } from "react";
 import Delete from "./Delete.jsx";
 
-export default function EditExpense({ expense }) {
+export default function EditExpense({ expense, user }) {
   const [name, setName] = useState(expense.name);
   const [cost, setCost] = useState(expense.cost);
   const [error, setError] = useState("");
@@ -40,7 +40,7 @@ export default function EditExpense({ expense }) {
   return (
     <>
       {!edit ? (
-        <div className="budgetItem">
+        <div className={user.isDarkMode ? "budgetItem-dark" : "budgetItem"}>
           <p>{expense.name}</p>
 
           <div id="edit-deleteBox">

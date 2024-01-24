@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation.js";
 import { useState } from "react";
 
-export default function NewGoal({ budgetId }) {
+export default function NewGoal({ budgetId, user }) {
   const [addGoal, setAddGoal] = useState(false);
   const [goalName, setGoalName] = useState("");
   const [goalAmount, setGoalAmount] = useState("");
@@ -47,7 +47,12 @@ export default function NewGoal({ budgetId }) {
 
   return (
     <div>
-      <button onClick={handleAddGoal}>Add New Goal</button>
+      <button
+        id={user.isDarkMode ? "button-dark" : "button-light"}
+        onClick={handleAddGoal}
+      >
+        Add New Goal
+      </button>
       <div style={{ display: addGoal ? "block" : "none" }}>
         <form className="addNewForm" onSubmit={handleSubmitGoal}>
           <input

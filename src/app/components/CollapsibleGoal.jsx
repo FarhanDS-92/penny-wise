@@ -5,7 +5,12 @@ import EditGoal from "@/app/components/EditGoal.jsx";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 
-export default function CollapsibleGoal({ goals, goalToDate, totalGoals }) {
+export default function CollapsibleGoal({
+  goals,
+  goalToDate,
+  totalGoals,
+  user,
+}) {
   const [isOpen, setIsOpen] = useState(false);
 
   function toggleMonthList() {
@@ -14,7 +19,10 @@ export default function CollapsibleGoal({ goals, goalToDate, totalGoals }) {
 
   return (
     <>
-      <div className="monthBreakdown" onClick={toggleMonthList}>
+      <div
+        className={user.isDarkMode ? "monthBreakdown-dark" : "monthBreakdown"}
+        onClick={toggleMonthList}
+      >
         <div>GOALS</div>
         <div>
           Monthly total: ${goalToDate}/${totalGoals}{" "}
@@ -24,7 +32,7 @@ export default function CollapsibleGoal({ goals, goalToDate, totalGoals }) {
       {goals.map((goal) => {
         return (
           <div key={goal.id} className={`monthList ${!isOpen ? "open" : ""}`}>
-            <EditGoal goal={goal} />
+            <EditGoal goal={goal} user={user} />
           </div>
         );
       })}
