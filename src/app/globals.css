@@ -11,6 +11,7 @@ Universal Section
 	box-sizing: border-box;
 	text-decoration: none;
 }
+
 .page-container {
 	position: relative;
 	min-height: 100vh;
@@ -517,8 +518,7 @@ Credit Page
 
 .card_Container .card {
 	position: relative;
-	width: 200px;
-	height: 250px;
+	height: 450px;
 	margin: 20px;
 	overflow: hidden;
 	box-shadow: 0 30px 30px -20px rgba(0, 0, 0, 1),
@@ -705,6 +705,7 @@ Media Queries
 
 /*  Medium screens (tablets) */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+
 	/* Additional styles for medium screens */
 	body {
 		font-size: 15px;
