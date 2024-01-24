@@ -430,7 +430,7 @@ Budget Overview Page
 }
 
 .budgetMonth-dark:hover {
-	background-color: #23a9a4;
+	background-color: #965013;
 	color: white;
 	font-weight: bolder;
 }
@@ -556,7 +556,7 @@ Budget Id Page
 }
 
 .budgetItem-dark:hover {
-	background-color: #23a9a4;
+	background-color: #965013;
 	color: white;
 	font-weight: bolder;
 }
