@@ -9,11 +9,10 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en" id={user.isDarkMode ? "html-dark" : "html-light"}>
       <body>
-
         <NavBar user={user} />
         <div className="page-container">
           <main>{children}</main>
-          <Footer />
+          <Footer user={user} />
         </div>
       </body>
     </html>
