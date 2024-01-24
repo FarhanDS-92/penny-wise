@@ -7,7 +7,7 @@ export default async function RootLayout({ children }) {
 	const user = await fetchUser();
 
 	return (
-		<html lang="en">
+		<html lang="en" id={user.isDarkMode ? "html-dark" : "html-light"}>
 			<body>
 				<div className="page-container">
 					<NavBar user={user} />

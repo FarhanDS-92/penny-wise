@@ -17,7 +17,7 @@ export default async function NotFound() {
         )}
       </p>
 
-      <img src="/piggy.gif" className="piggy" />
+      <img src="/piggy.gif" className="piggy" alt="gif of crying pig" />
     </section>
   );
 }

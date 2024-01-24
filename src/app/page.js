@@ -1,7 +1,5 @@
 import { fetchUser } from "@/lib/fetchUser.js";
 import Link from "next/link.js";
-import { PiArrowFatLineLeftFill } from "react-icons/pi";
-import { PiArrowFatLineRightFill } from "react-icons/pi";
 
 export default async function Home() {
   const user = await fetchUser();
@@ -23,7 +21,7 @@ export default async function Home() {
         <img
           className="snapShotImg"
           src="/screenShot_1.png"
-          alt="App Image of Budget"
+          alt="Example image of yearly budget"
         />
       </div>
 
@@ -35,7 +33,7 @@ export default async function Home() {
         <img
           className="snapShotImg"
           src="/screenShot_2.png"
-          alt="App Image of Monthly Budget"
+          alt="Example image of monthly budget"
         />
         <div className="homeDetails-container">
           <aside className="homeDetails">

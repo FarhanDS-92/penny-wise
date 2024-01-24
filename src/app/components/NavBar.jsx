@@ -4,9 +4,14 @@ import { useState } from "react";
 import Logout from "./Logout.jsx";
 import { FaHome } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { FaSun } from "react-icons/fa6";
+import { FaMoon } from "react-icons/fa";
+import { useRouter } from "next/navigation.js";
 
 export default function Navbar({ user }) {
   const [showMenu, setShowMenu] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(user.isDarkMode);
+  const router = useRouter();
 
   function toggleMenu() {
     setShowMenu(!showMenu);
@@ -17,12 +22,27 @@ export default function Navbar({ user }) {
     setShowMenu(false);
   }
 
+  async function modeSwitch() {
+    const res = await fetch(`/api/users`, {
+      method: "PUT",
+      body: JSON.stringify({
+        isDarkMode: !isDarkMode,
+      }),
+    });
+
+    setIsDarkMode(!isDarkMode);
+    router.refresh();
+  }
+
   return (
-    <nav className="navbar">
+    <nav className={user.isDarkMode ? "navbar-dark" : "navbar"}>
       <div className="leftSide">
         {user.id ? (
           <Link href="/budget" passHref>
-            <div className="homeLink" onClick={handleLinkClick}>
+            <div
+              className={user.isDarkMode ? "homeLink-dark" : "homeLink"}
+              onClick={handleLinkClick}
+            >
               <FaHome />
             </div>
           </Link>
@@ -35,28 +55,56 @@ export default function Navbar({ user }) {
         )}
       </div>
       <div className="centerLogo">
-        <img src="/light_mode_logo.png" alt="Penny Wise Logo" />
+        <img
+          src={user.isDarkMode ? "/dark_mode_logo.png" : "/light_mode_logo.png"}
+          alt="Penny Wise Logo"
+        />
       </div>
       <div className="rightSide">
-        <div className="homeLink" onClick={toggleMenu}>
+        <div
+          className={user.isDarkMode ? "homeLink-dark" : "homeLink"}
+          onClick={toggleMenu}
+        >
           <GiHamburgerMenu />
         </div>
-        <div className={`menuLinks ${showMenu ? "show" : ""}`}>
+        <div
+          id={user.isDarkMode ? "menuLinks-dark" : "menuLinks-light"}
+          className={`menuLinks ${showMenu ? "show" : ""}`}
+        >
           {user.id ? (
             <Link href="/budget" passHref>
-              <div onClick={handleLinkClick}>Budget</div>
+              <div
+                id={user.isDarkMode ? "nav-text-dark" : "nav-text"}
+                onClick={handleLinkClick}
+              >
+                Budget
+              </div>
             </Link>
           ) : null}
-
           {user.id ? (
-            <Logout />
+            <>
+              <Logout id={user.isDarkMode ? "nav-text-dark" : "nav-text"} />
+              <div id="mode-switch" onClick={modeSwitch}>
+                {isDarkMode ? <FaSun /> : <FaMoon />}
+              </div>
+            </>
           ) : (
             <>
               <Link href="/login" passHref>
-                <div onClick={handleLinkClick}>Login</div>
+                <div
+                  id={user.isDarkMode ? "nav-text-dark" : "nav-text"}
+                  onClick={handleLinkClick}
+                >
+                  Login
+                </div>
               </Link>
               <Link href="/register" passHref>
-                <div onClick={handleLinkClick}>Register</div>
+                <div
+                  id={user.isDarkMode ? "nav-text-dark" : "nav-text"}
+                  onClick={handleLinkClick}
+                >
+                  Register
+                </div>
               </Link>
             </>
           )}
