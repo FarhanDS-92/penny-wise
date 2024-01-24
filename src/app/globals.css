@@ -11,6 +11,11 @@ Universal Section
 	box-sizing: border-box;
 	text-decoration: none;
 }
+.page-container {
+	position: relative;
+	min-height: 100vh;
+	padding-bottom: 50px;
+}
 
 html {
 	background-image: url("/background.png");
@@ -532,9 +537,9 @@ Credit Page
 
 .card .content {
 	position: absolute;
-	bottom: -160px;
+	bottom: -100px;
 	width: 100%;
-	height: 80px;
+	height: 60px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -558,8 +563,8 @@ Credit Page
 	font-weight: 500;
 	font-size: 10px;
 	text-align: center;
-	margin: 20px 0 15px;
-	line-height: 1.1em;
+	margin: 30px 0 15px;
+	line-height: 1.5em;
 	transition: 0.5s;
 	transition-delay: 0.6s;
 	opacity: 0;
@@ -573,7 +578,7 @@ Credit Page
 
 .content .social-link {
 	position: relative;
-	bottom: 20px;
+	bottom: 25px;
 	display: flex;
 }
 
@@ -609,6 +614,43 @@ Credit Page
 .piggy {
 	margin-top: 20px;
 	max-height: 500px;
+}
+
+/* 
+*************************************************************
+Footer
+************************************************************* 
+*/
+
+.footer-copyright {
+	background-color: #027b9a;
+	color: #fff;
+	padding: 15px 30px;
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 40px;
+}
+
+.footer-copyright-wrapper {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	/* margin-top: auto; */
+}
+
+.footer-copyright-text {
+	color: #fff;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 18px;
+	/* margin-bottom: 0; */
+	/* margin-top: 0; */
+}
+
+.footer-copyright-link {
+	color: #fff;
 }
 
 /* 
