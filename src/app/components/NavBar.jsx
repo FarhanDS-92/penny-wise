@@ -108,6 +108,9 @@ export default function Navbar({ user }) {
               </Link>
             </>
           )}
+          <Link href="/credit">
+            <div onClick={handleLinkClick}>Credit</div>
+          </Link>
         </div>
       </div>
     </nav>
