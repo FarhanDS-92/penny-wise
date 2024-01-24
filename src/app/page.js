@@ -28,7 +28,7 @@ export default async function Home() {
       </div>
 
       <Link href={"/register"}>
-        <button>Register Now!</button>
+        <button className="home-register">Register Now!</button>
       </Link>
 
       <div className="snapShot">

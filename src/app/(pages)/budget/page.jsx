@@ -38,7 +38,7 @@ export default async function budget() {
   });
 
   return (
-    <section>
+    <section className="budget-sect">
       <CreateBudget />
       <div className="budget-section">
         {separatedArrays.map((budgetYear) => (
