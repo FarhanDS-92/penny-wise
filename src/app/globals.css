@@ -13,39 +13,39 @@ Universal Section
 }
 
 .page-container {
-  position: relative;
-  min-height: 100vh;
-  padding-bottom: 50px;
+	position: relative;
+	min-height: 91.75vh;
+	padding-bottom: 70px;
 }
 
 #html-light {
-  background-image: url("/background.png");
-  /* background by SVGBackgrounds.com */
-  background-position: center;
-  background-repeat: no-repeat;
-  -webkit-background-repeat: no-repeat;
-  -moz-background-repeat: no-repeat;
-  -o-background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  min-height: 100%;
+	background-image: url("/background.png");
+	/* background by SVGBackgrounds.com */
+	background-position: center;
+	background-repeat: no-repeat;
+	-webkit-background-repeat: no-repeat;
+	-moz-background-repeat: no-repeat;
+	-o-background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	min-height: 100%;
 }
 
 #html-dark {
-  background-image: url("/background-darkmode.png");
-  /* background by SVGBackgrounds.com */
-  background-position: center;
-  background-repeat: no-repeat;
-  -webkit-background-repeat: no-repeat;
-  -moz-background-repeat: no-repeat;
-  -o-background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  min-height: 100%;
+	background-image: url("/background-darkmode.png");
+	/* background by SVGBackgrounds.com */
+	background-position: center;
+	background-repeat: no-repeat;
+	-webkit-background-repeat: no-repeat;
+	-moz-background-repeat: no-repeat;
+	-o-background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	min-height: 100%;
 }
 
 button {
@@ -91,11 +91,11 @@ Navbar
 }
 
 .navbar-dark {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: black;
-  padding: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: black;
+	padding: 10px;
 }
 
 .centerLogo {
@@ -119,61 +119,61 @@ Navbar
 }
 
 .homeLink-dark {
-  font-size: 30px;
-  color: white;
-  cursor: pointer;
+	font-size: 30px;
+	color: white;
+	cursor: pointer;
 }
 
 .menuLinks {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  top: 6.5%;
-  right: 0;
-  padding: 10px;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.5s, visibility 0s linear 0.5s;
-  z-index: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: absolute;
+	top: 6.5%;
+	right: 0;
+	padding: 10px;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.5s, visibility 0s linear 0.5s;
+	z-index: 1;
 }
 
 #menuLinks-light {
-  background-color: #dadada;
-  color: black;
+	background-color: #dadada;
+	color: black;
 }
 
 #menuLinks-dark {
-  background-color: black;
-  color: white;
+	background-color: black;
+	color: white;
 }
 
 .menuLinks.show {
-  min-width: 150px;
-  opacity: 1;
-  margin-left: -10px;
-  visibility: visible;
-  transition: opacity 0.5s;
+	min-width: 150px;
+	opacity: 1;
+	margin-left: -10px;
+	visibility: visible;
+	transition: opacity 0.5s;
 }
 
 .menuLinks a {
-  text-decoration: none;
-  margin: 10px 0;
+	text-decoration: none;
+	margin: 10px 0;
 }
 
 #nav-text {
-  cursor: pointer;
-  color: black;
+	cursor: pointer;
+	color: black;
 }
 
 #nav-text-dark {
-  cursor: pointer;
-  color: white;
+	cursor: pointer;
+	color: white;
 }
 
 #mode-switch {
-  padding-top: 10px;
-  cursor: pointer;
+	padding-top: 10px;
+	cursor: pointer;
 }
 
 /* 
@@ -253,12 +253,12 @@ Login / Register
 }
 
 .close {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-  display: flex;
-  justify-content: flex-end;
-  padding: 15px;
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+	display: flex;
+	justify-content: flex-end;
+	padding: 15px;
 }
 
 .link-login-register {
@@ -327,14 +327,14 @@ Create Budget Button/Form
 }
 
 .popup-create-budget-dark {
-  width: 300px;
-  height: 200px;
-  background-color: #082c27;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgb(37, 37, 37);
-  padding: 10px;
-  color: white;
-  border: 1px solid #7f8c8d;
+	width: 300px;
+	height: 200px;
+	background-color: #082c27;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgb(37, 37, 37);
+	padding: 10px;
+	color: white;
+	border: 1px solid #7f8c8d;
 }
 
 .submit-cancel-btn {
@@ -364,12 +364,12 @@ Budget Overview Page
 }
 
 .budget-section-dark {
-  width: 90%;
-  margin: auto;
-  margin-top: 20px;
-  background-color: black;
-  cursor: pointer;
-  border: 1px solid white;
+	width: 90%;
+	margin: auto;
+	margin-top: 20px;
+	background-color: black;
+	cursor: pointer;
+	border: 1px solid white;
 }
 
 .budgetYear {
@@ -383,12 +383,12 @@ Budget Overview Page
 }
 
 .budgetYear-dark {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  color: white;
-  padding: 5px;
-  border-bottom: 1px solid white;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	color: white;
+	padding: 5px;
+	border-bottom: 1px solid white;
 }
 
 .monthList {
@@ -415,12 +415,12 @@ Budget Overview Page
 }
 
 .budgetMonth-dark {
-  background-color: #061c19;
-  border-bottom: 1px dotted rgb(255, 255, 255);
-  display: flex;
-  color: white;
-  justify-content: space-between;
-  padding: 15px 15px 5px 15px;
+	background-color: #061c19;
+	border-bottom: 1px dotted rgb(255, 255, 255);
+	display: flex;
+	color: white;
+	justify-content: space-between;
+	padding: 15px 15px 5px 15px;
 }
 
 .budgetMonth:hover {
@@ -430,9 +430,9 @@ Budget Overview Page
 }
 
 .budgetMonth-dark:hover {
-  background-color: #23a9a4;
-  color: white;
-  font-weight: bolder;
+	background-color: #23a9a4;
+	color: white;
+	font-weight: bolder;
 }
 
 /* 
