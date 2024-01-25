@@ -14,7 +14,7 @@ Universal Section
 
 .page-container {
   position: relative;
-  min-height: 93vh;
+  min-height: 100vh;
   padding-bottom: 70px;
 }
 
@@ -856,6 +856,7 @@ Media Queries
   .budget-sect {
     padding-top: 60px;
   }
+
   .overlay {
     padding-top: 60px;
   }
@@ -904,6 +905,7 @@ Media Queries
     width: 100%;
     z-index: 1000;
   }
+
   .monthPage {
     padding-top: 60px;
   }
@@ -945,6 +947,7 @@ Media Queries
     padding: 10px;
     font-size: 16px;
   }
+
   .snapShot {
     flex-direction: column;
   }
