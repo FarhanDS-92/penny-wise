@@ -115,6 +115,7 @@ export default async function budgetDetails({ params }) {
           <NewCapital budgetId={budgetId} user={user} />
           <NewGoal budgetId={budgetId} user={user} />
         </div>
+
         <Link href={`/budget`}>
           <button id={user.isDarkMode ? "button-dark" : "button-light"}>
             Budget Overview

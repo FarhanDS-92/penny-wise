@@ -23,7 +23,6 @@ export default function Register() {
       }),
     });
     const info = await response.json();
-    console.log(info);
     if (info.error) {
       return setError(info.error);
     }

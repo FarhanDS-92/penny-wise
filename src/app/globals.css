@@ -13,6 +13,7 @@ Universal Section
 }
 
 .page-container {
+	width: 100%;
 	position: relative;
 	min-height: 100vh;
 	padding-bottom: 70px;
@@ -437,6 +438,31 @@ Budget Overview Page
 
 /* 
 *************************************************************
+Budget Overview Page - Line Chart Component
+************************************************************* 
+*/
+
+#lineChart-container {
+	width: 90%;
+	margin: 0 auto;
+	padding-top: 20px;
+}
+
+#lineChart {
+	display: flex;
+	justify-content: center;
+	background-color: #e8eaea;
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 20px;
+	min-height: 600px;
+	height: auto;
+	color: purple;
+	font-weight: 700;
+}
+
+/* 
+*************************************************************
 Budget Id Page
 ************************************************************* 
 */
@@ -840,6 +866,7 @@ Footer
 .footer-copyright-link {
 	color: #fff;
 }
+
 
 /* 
 *************************************************************

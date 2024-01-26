@@ -2,6 +2,7 @@ import { fetchUser } from "@/lib/fetchUser.js";
 import { prisma } from "@/lib/prisma.js";
 import CreateBudget from "@/app/components/CreateBudget.jsx";
 import CollapsibleYear from "@/app/components/CollapsibleYear.jsx";
+import LineChart from "@/app/components/LineChart.jsx";
 
 export default async function budget() {
   const user = await fetchUser();
@@ -12,6 +13,7 @@ export default async function budget() {
     },
     include: {
       expenses: true,
+      capital: true,
     },
     orderBy: [
       {
@@ -38,10 +40,11 @@ export default async function budget() {
   });
 
   return (
-
     <section>
       <CreateBudget user={user} />
-      <div className={user.isDarkMode ? "budget-section-dark" : "budget-section"}>
+      <div
+        className={user.isDarkMode ? "budget-section-dark" : "budget-section"}
+      >
         {separatedArrays.map((budgetYear) => (
           <CollapsibleYear
             key={budgetYear[0].year}
@@ -50,6 +53,7 @@ export default async function budget() {
           />
         ))}
       </div>
+      <LineChart separatedArrays={separatedArrays} />
     </section>
   );
 }
