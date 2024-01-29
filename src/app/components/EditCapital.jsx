@@ -54,6 +54,7 @@ export default function EditCapital({ capital, user }) {
       ) : (
         <form className="budgetForm" onSubmit={handleSubmit}>
           <input
+            aria-label="Edit capital name"
             type="text"
             value={name}
             onChange={(e) => {
@@ -64,6 +65,7 @@ export default function EditCapital({ capital, user }) {
           <p>{error}</p>
           <div className="formBox">
             <input
+              aria-label="Edit capital amount"
               type="text"
               value={amount}
               onChange={(e) => {

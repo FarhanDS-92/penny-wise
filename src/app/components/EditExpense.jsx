@@ -54,6 +54,7 @@ export default function EditExpense({ expense, user }) {
       ) : (
         <form className="budgetForm" onSubmit={handleSubmit}>
           <input
+            aria-label="Edit expense name"
             type="text"
             value={name}
             onChange={(e) => {
@@ -64,6 +65,7 @@ export default function EditExpense({ expense, user }) {
           <p>{error}</p>
           <div className="formBox">
             <input
+              aria-label="Edit expense total"
               type="text"
               value={cost}
               onChange={(e) => {

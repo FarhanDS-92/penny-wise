@@ -48,14 +48,20 @@ export default function AddGoal({ budgetId, user }) {
   return (
     <div>
       <button
+        aria-label="Add new goal"
         id={user.isDarkMode ? "button-dark" : "button-light"}
         onClick={handleAddGoal}
       >
         Add New Goal
       </button>
       <div style={{ display: addGoal ? "block" : "none" }}>
-        <form className="addNewForm" onSubmit={handleSubmitGoal}>
+        <form
+          aria-label="new goal form"
+          className="addNewForm"
+          onSubmit={handleSubmitGoal}
+        >
           <input
+            aria-label="Goal name"
             type="text"
             required
             placeholder="Name"
@@ -64,6 +70,7 @@ export default function AddGoal({ budgetId, user }) {
           />
 
           <input
+            aria-label="Goal amount"
             type="text"
             required
             placeholder="Amount"

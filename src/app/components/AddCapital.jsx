@@ -46,14 +46,20 @@ export default function AddCapital({ budgetId, user }) {
   return (
     <div>
       <button
+        aria-label="Add new capital"
         id={user.isDarkMode ? "button-dark" : "button-light"}
         onClick={handleAddCapital}
       >
         Add New Capital
       </button>
       <div style={{ display: addCapital ? "block" : "none" }}>
-        <form className="addNewForm" onSubmit={handleSubmitCapital}>
+        <form
+          aria-label="new capital form"
+          className="addNewForm"
+          onSubmit={handleSubmitCapital}
+        >
           <input
+            aria-label="Capital name"
             type="text"
             required
             placeholder="Name"
@@ -62,6 +68,7 @@ export default function AddCapital({ budgetId, user }) {
           />
 
           <input
+            aria-label="Capital amount"
             type="text"
             required
             placeholder="Amount"

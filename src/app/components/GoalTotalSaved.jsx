@@ -55,6 +55,7 @@ export default function TotalSaved({ goal }) {
   return (
     <div>
       <button
+        aria-label="Add funds to goal"
         className="goalButton"
         style={{ display: !addGoal ? "block" : "none" }}
         onClick={handleAddGoal}
@@ -64,6 +65,7 @@ export default function TotalSaved({ goal }) {
       <div style={{ display: addGoal ? "block" : "none" }}>
         <form id="addFunds" onSubmit={handleSubmitFunds}>
           <input
+            aria-label="Amount being added towards goal"
             type="text"
             required
             placeholder="Amount"

@@ -82,6 +82,7 @@ export default function AddExpense({ budgetId, categories, user }) {
   return (
     <div>
       <button
+        aria-label="Add new expense"
         id={user.isDarkMode ? "button-dark" : "button-light"}
         onClick={handleAddExpense}
       >
@@ -89,10 +90,19 @@ export default function AddExpense({ budgetId, categories, user }) {
       </button>
 
       <div id="newExpense" style={{ display: addExpense ? "block" : "none" }}>
-        <button onClick={handleAddCategory}>Create New Category</button>
+        <button
+          aria-label="Add new expense category"
+          onClick={handleAddCategory}
+        >
+          Create New Category
+        </button>
 
         <div style={{ display: addCategory ? "block" : "none" }}>
-          <form className="addNewForm" onSubmit={handleSubmitCategory}>
+          <form
+            name="new category form"
+            className="addNewForm"
+            onSubmit={handleSubmitCategory}
+          >
             <input
               type="text"
               required
@@ -106,9 +116,14 @@ export default function AddExpense({ budgetId, categories, user }) {
           </form>
         </div>
 
-        <form className="addNewForm" onSubmit={handleSubmitExpense}>
+        <form
+          name="new expense form"
+          className="addNewForm"
+          onSubmit={handleSubmitExpense}
+        >
           <select
             required
+            aria-label="category drop down menu"
             name="categories"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
@@ -123,6 +138,7 @@ export default function AddExpense({ budgetId, categories, user }) {
           </select>
 
           <input
+            aria-label="expense name"
             type="text"
             required
             placeholder="Name"
@@ -131,6 +147,7 @@ export default function AddExpense({ budgetId, categories, user }) {
           />
 
           <input
+            aria-label="expense amount"
             type="text"
             required
             placeholder="Amount"

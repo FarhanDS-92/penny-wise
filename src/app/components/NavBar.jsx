@@ -38,7 +38,7 @@ export default function Navbar({ user }) {
     <nav className={user.isDarkMode ? "navbar-dark" : "navbar"}>
       <div className="leftSide">
         {user.id ? (
-          <Link href="/budget" passHref>
+          <Link href="/budget" aria-label="budget overview">
             <div
               className={user.isDarkMode ? "homeLink-dark" : "homeLink"}
               onClick={handleLinkClick}
@@ -47,7 +47,7 @@ export default function Navbar({ user }) {
             </div>
           </Link>
         ) : (
-          <Link href="/" passHref>
+          <Link href="/" aria-label="landing page">
             <div className="homeLink" onClick={handleLinkClick}>
               <FaHome />
             </div>
@@ -61,12 +61,14 @@ export default function Navbar({ user }) {
         />
       </div>
       <div className="rightSide">
-        <div
+        <button
+          title="menu"
+          id="menu-button"
           className={user.isDarkMode ? "homeLink-dark" : "homeLink"}
           onClick={toggleMenu}
         >
           <GiHamburgerMenu />
-        </div>
+        </button>
         <div
           id={user.isDarkMode ? "menuLinks-dark" : "menuLinks-light"}
           className={`menuLinks ${showMenu ? "show" : ""}`}

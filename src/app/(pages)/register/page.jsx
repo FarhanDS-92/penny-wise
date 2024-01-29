@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation.js";
 import { useState } from "react";
 import Link from "next/link.js";
 import { FaEye } from "react-icons/fa";
+import { IoMdEyeOff } from "react-icons/io";
 
 export default function Register() {
   const [username, setUsername] = useState("");
@@ -38,6 +39,7 @@ export default function Register() {
 
   return (
     <section className="overlay">
+      <title>Register page</title>
       <div className="popup">
         <span className="close" onClick={handleClosePopup}>
           x
@@ -45,8 +47,13 @@ export default function Register() {
         <div>
           <h3>Register</h3>
           <br />
-          <form className="login-regForm" onSubmit={handleRegister}>
+          <form
+            aria-label="login form"
+            className="login-regForm"
+            onSubmit={handleRegister}
+          >
             <input
+              name="username"
               className="input-login-size"
               placeholder="Username"
               onChange={(e) => setUsername(e.target.value)}
@@ -56,6 +63,7 @@ export default function Register() {
             <br />
 
             <input
+              aria-label="email"
               className="input-login-size"
               value={email}
               placeholder="Email"
@@ -64,8 +72,9 @@ export default function Register() {
 
             <br />
 
-            <div>
+            <div className="pw-div">
               <input
+                aria-label="password"
                 type={showPassword ? "text" : "password"}
                 className="input-login-size"
                 value={password}
@@ -73,13 +82,14 @@ export default function Register() {
                 onChange={(e) => setPassword(e.target.value)}
               />
               <button
-                className="pw-vis"
+                aria-label="password visibility"
+                className="password-vis"
                 type="button"
                 onClick={() => {
                   setShowPassword(!showPassword);
                 }}
               >
-                <FaEye />
+                {showPassword ? <IoMdEyeOff /> : <FaEye />}
               </button>
             </div>
             <br />
