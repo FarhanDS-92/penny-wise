@@ -5,6 +5,7 @@ import Link from "next/link.js";
 import BudgetLink from "./BudgetLink.jsx";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
+import LineChart from "./LineChart.jsx";
 
 export default function CollapsibleYear({ budgetYear, user }) {
   const [isOpen, setIsOpen] = useState(false);

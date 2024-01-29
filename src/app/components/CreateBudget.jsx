@@ -67,6 +67,7 @@ export default function CreateBudget({ user }) {
               Month:
               <input
                 className="month-year-input"
+                placeholder="MM"
                 type="text"
                 value={month}
                 onChange={(e) => setMonth(e.target.value)}
@@ -75,7 +76,8 @@ export default function CreateBudget({ user }) {
             <label>
               Year:
               <input
-                className="							month-year-input"
+                className="month-year-input"
+                placeholder="YYYY"
                 type="text"
                 value={year}
                 onChange={(e) => setYear(e.target.value)}

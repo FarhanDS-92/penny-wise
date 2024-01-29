@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation.js";
 import { useState } from "react";
 
-export default function NewExpense({ budgetId, categories, user }) {
+export default function AddExpense({ budgetId, categories, user }) {
   const [addExpense, setAddExpense] = useState(false);
   const [addCategory, setAddCategory] = useState(false);
   const [newCategory, setNewCategory] = useState("");

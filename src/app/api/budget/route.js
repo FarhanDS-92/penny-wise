@@ -14,7 +14,7 @@ export async function POST(req, res) {
     if (!month || !year) {
       return NextResponse.json({
         success: false,
-        error: "You must provide a month and year",
+        error: "You must provide a two digit month and a four digit year",
       });
     }
 

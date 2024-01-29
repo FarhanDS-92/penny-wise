@@ -2,11 +2,13 @@
 import { useRouter } from "next/navigation.js";
 import { useState } from "react";
 import Link from "next/link.js";
+import { FaEye } from "react-icons/fa";
 
 export default function Register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const [error, setError] = useState("");
 
@@ -23,7 +25,6 @@ export default function Register() {
       }),
     });
     const info = await response.json();
-    console.log(info);
     if (info.error) {
       return setError(info.error);
     }
@@ -63,12 +64,24 @@ export default function Register() {
 
             <br />
 
-            <input
-              className="input-login-size"
-              value={password}
-              placeholder="Password"
-              onChange={(e) => setPassword(e.target.value)}
-            />
+            <div>
+              <input
+                type={showPassword ? "text" : "password"}
+                className="input-login-size"
+                value={password}
+                placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <button
+                className="pw-vis"
+                type="button"
+                onClick={() => {
+                  setShowPassword(!showPassword);
+                }}
+              >
+                <FaEye />
+              </button>
+            </div>
             <br />
             <button type="submit" className="btn-login">
               Register
