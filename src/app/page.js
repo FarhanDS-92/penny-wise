@@ -6,6 +6,7 @@ export default async function Home() {
 
   return (
     <section id="homePage">
+      <title>Budget Planning App Penny Wise</title>
       <div className="snapShot">
         <div className="homeDetails-container">
           <aside className="homeDetails">

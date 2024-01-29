@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation.js";
 import { useState } from "react";
 import Link from "next/link.js";
 import { FaEye } from "react-icons/fa";
+import { IoMdEyeOff } from "react-icons/io";
 
 export default function Login() {
   const [error, setError] = useState("");
@@ -39,6 +40,7 @@ export default function Login() {
 
   return (
     <section className="overlay">
+      <title>Login page</title>
       <div className="popup">
         <span className="close" onClick={handleClosePopup}>
           x
@@ -46,8 +48,13 @@ export default function Login() {
         <div>
           <h3>Log In</h3>
           <br />
-          <form className="login-regForm" onSubmit={handleLogin}>
+          <form
+            aria-label="register form"
+            className="login-regForm"
+            onSubmit={handleLogin}
+          >
             <input
+              aria-label="username"
               className="input-login-size "
               placeholder="Username"
               onChange={(e) => setUsername(e.target.value)}
@@ -55,8 +62,9 @@ export default function Login() {
             />
             <br />
 
-            <div>
+            <div className="pw-div">
               <input
+                aria-label="password"
                 type={showPassword ? "text" : "password"}
                 className="input-login-size "
                 placeholder="Password"
@@ -64,13 +72,14 @@ export default function Login() {
                 value={password}
               />
               <button
-                className="pw-vis"
+                aria-label="password visibility"
+                className="password-vis"
                 type="button"
                 onClick={() => {
                   setShowPassword(!showPassword);
                 }}
               >
-                <FaEye />
+                {showPassword ? <IoMdEyeOff /> : <FaEye />}
               </button>
             </div>
             <br />

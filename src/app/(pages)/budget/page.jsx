@@ -41,6 +41,7 @@ export default async function budget() {
 
   return (
     <section>
+      <title>Budget Overview</title>
       <CreateBudget user={user} />
       <div
         className={user.isDarkMode ? "budget-section-dark" : "budget-section"}
@@ -53,7 +54,7 @@ export default async function budget() {
           />
         ))}
       </div>
-      <LineChart separatedArrays={separatedArrays} />
+      <LineChart separatedArrays={separatedArrays} user={user} />
     </section>
   );
 }

@@ -64,6 +64,7 @@ export default function EditGoal({ goal, user }) {
       ) : (
         <form className="budgetForm" onSubmit={handleSubmit}>
           <input
+            aria-label="Edit goal name"
             type="text"
             value={name}
             onChange={(e) => {
@@ -74,6 +75,7 @@ export default function EditGoal({ goal, user }) {
           <p>{error}</p>
           <div className="formBox">
             <input
+              aria-label="Edit goal allocated funds"
               type="text"
               value={allocated}
               onChange={(e) => {
@@ -82,6 +84,7 @@ export default function EditGoal({ goal, user }) {
             />
 
             <input
+              aria-label="edit goal total"
               type="text"
               value={cost}
               onChange={(e) => {

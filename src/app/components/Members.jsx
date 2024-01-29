@@ -4,7 +4,8 @@ export default async function () {
   const user = await fetchUser();
 
   return (
-    <div>
+    <section>
+      <title>Meet our team</title>
       <div className={user.isDarkMode ? "title-dark" : "title"}>
         <h4>MEET OUR TEAM</h4>
       </div>
@@ -17,7 +18,7 @@ export default async function () {
 
             <div className="content">
               <div className="contentBx">
-                <h3>FARHAN SIDDIQI </h3>
+                <h3>FARHAN D. SIDDIQI </h3>
                 <br />
               </div>
 
@@ -29,17 +30,29 @@ export default async function () {
                     }
                     target="blank"
                   >
-                    <img className="icon-credit-page" src="linkedin.png" />
+                    <img
+                      className="icon-credit-page"
+                      src="linkedin.png"
+                      alt="Farhan D. Siddiqi linkedin link"
+                    />
                   </Link>
                 </li>
                 <li style={{ "--i": 2 }}>
                   <Link href={"https://github.com/FarhanDS-92"} target="blank">
-                    <img className="icon-credit-page" src="github.png" />
+                    <img
+                      className="icon-credit-page"
+                      src="github.png"
+                      alt="Farhan D. Siddiqi github link"
+                    />
                   </Link>
                 </li>
                 <li style={{ "--i": 3 }}>
                   <Link href={"https://farhandev.ca/"} target="blank">
-                    <img className="icon-credit-page" src="portfolio.png" />
+                    <img
+                      className="icon-credit-page"
+                      src="portfolio.png"
+                      alt="Farhan D. Siddiqi portfolio site link"
+                    />
                   </Link>
                 </li>
               </ul>
@@ -63,12 +76,20 @@ export default async function () {
                     href={"https://www.linkedin.com/in/calypso-hernandez/"}
                     target="blank"
                   >
-                    <img className="icon-credit-page" src="linkedin.png" />
+                    <img
+                      className="icon-credit-page"
+                      src="linkedin.png"
+                      alt="Calypso Hernandez linkedin link"
+                    />
                   </Link>
                 </li>
                 <li style={{ "--i": 2 }}>
                   <Link href={"https://github.com/Calypso90"} target="blank">
-                    <img className="icon-credit-page" src="github.png" />
+                    <img
+                      className="icon-credit-page"
+                      src="github.png"
+                      alt="Calypso Hernandez github link"
+                    />
                   </Link>
                 </li>
               </ul>
@@ -94,12 +115,20 @@ export default async function () {
                     }
                     target="blank"
                   >
-                    <img className="icon-credit-page" src="linkedin.png" />
+                    <img
+                      className="icon-credit-page"
+                      src="linkedin.png"
+                      alt="Victor Troche linkedin link"
+                    />
                   </Link>
                 </li>
                 <li style={{ "--i": 2 }}>
                   <Link href={"https://github.com/Vicpr22"} target="blank">
-                    <img className="icon-credit-page" src="github.png" />
+                    <img
+                      className="icon-credit-page"
+                      src="github.png"
+                      alt="Victor Troche github link"
+                    />
                   </Link>
                 </li>
               </ul>
@@ -124,12 +153,20 @@ export default async function () {
                     }
                     target="blank"
                   >
-                    <img className="icon-credit-page" src="linkedin.png" />
+                    <img
+                      className="icon-credit-page"
+                      src="linkedin.png"
+                      alt="Pimpa Stephens linkedin link"
+                    />
                   </Link>
                 </li>
                 <li style={{ "--i": 2 }}>
                   <Link href={"https://github.com/PimmyPong"} target="blank">
-                    <img className="icon-credit-page" src="github.png" />
+                    <img
+                      className="icon-credit-page"
+                      src="github.png"
+                      alt="Victor Troche github link"
+                    />
                   </Link>
                 </li>
               </ul>
@@ -137,6 +174,6 @@ export default async function () {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

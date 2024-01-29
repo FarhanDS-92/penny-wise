@@ -87,6 +87,7 @@ export default async function budgetDetails({ params }) {
 
   return (
     <section className="monthPage">
+      <title>Budget Breakdown</title>
       <div className={user.isDarkMode ? "monthOverview-dark" : "monthOverview"}>
         <div className={user.isDarkMode ? "monthYear-dark" : "monthYear"}>
           <h1>{months[budget.month - 1]}</h1>
@@ -117,7 +118,10 @@ export default async function budgetDetails({ params }) {
         </div>
 
         <Link href={`/budget`}>
-          <button id={user.isDarkMode ? "button-dark" : "button-light"}>
+          <button
+            aria-label="Return to budget overview"
+            id={user.isDarkMode ? "button-dark" : "button-light"}
+          >
             Budget Overview
           </button>
         </Link>

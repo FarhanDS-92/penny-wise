@@ -6,7 +6,7 @@ import { Line } from "react-chartjs-2";
 defaults.maintainAspectRatio = false;
 defaults.responsive = true;
 
-defaults.color = "#e7842d";
+defaults.color = "#14615d";
 defaults.font.weight = "700";
 
 defaults.plugins.title.display = true;
@@ -15,7 +15,7 @@ defaults.plugins.title.font.size = 20;
 defaults.plugins.title.color = "black";
 defaults.plugins.title.font.weight = "700";
 
-export default function LineChart({ separatedArrays }) {
+export default function LineChart({ separatedArrays, user }) {
   const [trends, setTrends] = useState(false);
   const [yearlyData, setYearlyData] = useState([]);
 
@@ -66,7 +66,12 @@ export default function LineChart({ separatedArrays }) {
   return (
     <div id="lineChart-container">
       {yearlyData.length > 0 ? (
-        <button onClick={handleToggle}>Spending Trends</button>
+        <button
+          id={user.isDarkMode ? "button-dark" : "button-light"}
+          onClick={handleToggle}
+        >
+          Spending Trends
+        </button>
       ) : null}
 
       {trends ? (

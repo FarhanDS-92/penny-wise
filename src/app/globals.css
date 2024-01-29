@@ -13,10 +13,10 @@ Universal Section
 }
 
 .page-container {
-	width: 100%;
-	position: relative;
-	min-height: 100vh;
-	padding-bottom: 70px;
+  width: 100%;
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 70px;
 }
 
 #html-light {
@@ -50,13 +50,13 @@ Universal Section
 }
 
 button {
-  background-color: #e07416;
+  background-color: #14615d;
   color: white;
   padding: 5px;
   font-size: 15px;
   font-weight: bold;
   border: none;
-  box-shadow: 3px 3px #7f8c8d;
+  box-shadow: 3px 3px #5a6263;
   cursor: pointer;
 }
 
@@ -177,6 +177,11 @@ Navbar
   cursor: pointer;
 }
 
+#menu-button {
+  background: none;
+  box-shadow: none;
+}
+
 /* 
 *************************************************************
 Home Page
@@ -267,7 +272,7 @@ Login / Register
 }
 
 .click-here {
-  color: #e07416;
+  color: #14615d;
   font-weight: bolder;
   font-size: 15px;
 }
@@ -278,20 +283,31 @@ Login / Register
 }
 
 .btn-login {
-  background-color: #e7842d;
   color: #fff;
   border-radius: 3px;
   width: 80px;
   height: 30px;
   border-radius: 20px;
   text-align: center;
-  font-size: 12px;
+  font-weight: bolder;
 }
 
 .error-login {
   margin: 5px 0px 15px 0px;
   font-size: 12px;
-  color: #e07416;
+  color: #14615d;
+}
+
+.pw-div {
+  position: relative;
+}
+
+.password-vis {
+  background: none;
+  color: black;
+  box-shadow: none;
+  position: absolute;
+  right: 0;
 }
 
 /* 
@@ -377,7 +393,7 @@ Budget Overview Page
   width: 100%;
   display: flex;
   justify-content: space-between;
-  background-color: #23a9a4;
+  background-color: #14615d;
   color: white;
   padding: 5px;
   border-bottom: 1px solid white;
@@ -426,7 +442,6 @@ Budget Overview Page
 
 .budgetMonth:hover {
   background-color: #e7842d;
-  color: white;
   font-weight: bolder;
 }
 
@@ -443,22 +458,22 @@ Budget Overview Page - Line Chart Component
 */
 
 #lineChart-container {
-	width: 90%;
-	margin: 0 auto;
-	padding-top: 20px;
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 20px;
 }
 
 #lineChart {
-	display: flex;
-	justify-content: center;
-	background-color: #e8eaea;
-	width: 80%;
-	margin: 0 auto;
-	margin-top: 20px;
-	min-height: 600px;
-	height: auto;
-	color: purple;
-	font-weight: 700;
+  display: flex;
+  justify-content: center;
+  background-color: #e8eaea;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20px;
+  min-height: 600px;
+  height: auto;
+  color: purple;
+  font-weight: 700;
 }
 
 /* 
@@ -492,7 +507,7 @@ Budget Id Page
 .monthYear {
   display: flex;
   justify-content: space-between;
-  background-color: #23a9a4;
+  background-color: #14615d;
   color: white;
   padding: 10px;
   border-bottom: 1px solid white;
@@ -513,7 +528,7 @@ Budget Id Page
   color: black;
   padding: 15px 5px 5px 15px;
   border-bottom: 1px solid white;
-  background-color: #7f8c8d;
+  background-color: #595959;
   color: white;
   font-weight: bold;
   cursor: pointer;
@@ -548,7 +563,7 @@ Budget Id Page
   justify-content: space-between;
   padding: 15px 15px 5px 15px;
   border-bottom: 1px dotted black;
-  background-color: #23a9a4;
+  background-color: #14615d;
   color: white;
 }
 
@@ -577,7 +592,6 @@ Budget Id Page
 
 .budgetItem:hover {
   background-color: #e7842d;
-  color: white;
   font-weight: bolder;
 }
 
@@ -594,7 +608,7 @@ Budget Id Page
 }
 
 .goalButton {
-  background-color: #23a9a4;
+  background-color: #14615d;
   color: white;
   box-shadow: none;
   font-weight: bold;
@@ -608,7 +622,7 @@ Budget Id Page
 }
 
 .edit-deleteButton {
-  background-color: #7f8c8d;
+  background-color: #595959;
   padding: 3px;
   font-size: 15px;
   font-weight: bold;
@@ -826,7 +840,7 @@ Footer
 */
 
 .footer-copyright {
-  background-color: #23a9a4;
+  background-color: #14615d;
   color: #fff;
   padding: 15px 30px;
   text-align: center;
@@ -866,7 +880,6 @@ Footer
 .footer-copyright-link {
   color: #fff;
 }
-
 
 /* 
 *************************************************************
