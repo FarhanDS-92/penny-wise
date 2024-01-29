@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation.js";
 import { useState } from "react";
 
-export default function NewGoal({ budgetId, user }) {
+export default function AddGoal({ budgetId, user }) {
   const [addGoal, setAddGoal] = useState(false);
   const [goalName, setGoalName] = useState("");
   const [goalAmount, setGoalAmount] = useState("");

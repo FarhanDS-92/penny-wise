@@ -2,12 +2,14 @@
 import { useRouter } from "next/navigation.js";
 import { useState } from "react";
 import Link from "next/link.js";
+import { FaEye } from "react-icons/fa";
 
 export default function Login() {
+  const [error, setError] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const router = useRouter();
 
@@ -53,13 +55,24 @@ export default function Login() {
             />
             <br />
 
-            <input
-              className="input-login-size "
-              placeholder="Password"
-              onChange={(e) => setPassword(e.target.value)}
-              value={password}
-              type="password"
-            />
+            <div>
+              <input
+                type={showPassword ? "text" : "password"}
+                className="input-login-size "
+                placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+              />
+              <button
+                className="pw-vis"
+                type="button"
+                onClick={() => {
+                  setShowPassword(!showPassword);
+                }}
+              >
+                <FaEye />
+              </button>
+            </div>
             <br />
 
             <button type="submit" disabled={isLoading} className="btn-login">

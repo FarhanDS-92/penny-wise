@@ -65,7 +65,9 @@ export default function LineChart({ separatedArrays }) {
 
   return (
     <div id="lineChart-container">
-      <button onClick={handleToggle}>Spending Trends</button>
+      {yearlyData.length > 0 ? (
+        <button onClick={handleToggle}>Spending Trends</button>
+      ) : null}
 
       {trends ? (
         <div id="lineChart">

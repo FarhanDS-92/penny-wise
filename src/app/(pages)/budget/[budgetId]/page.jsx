@@ -1,9 +1,9 @@
 import { prisma } from "@/lib/prisma.js";
 import Link from "next/link.js";
 import { fetchUser } from "@/lib/fetchUser.js";
-import NewExpense from "@/app/components/AddExpense.jsx";
-import NewCapital from "@/app/components/AddCapital.jsx";
-import NewGoal from "@/app/components/AddGoal.jsx";
+import AddExpense from "@/app/components/AddExpense.jsx";
+import AddCapital from "@/app/components/AddCapital.jsx";
+import AddGoal from "@/app/components/AddGoal.jsx";
 import CollapsibleExpenses from "@/app/components/CollapsibleExpenses.jsx";
 import CollapsibleCapital from "@/app/components/CollapsibleCapital.jsx";
 import CollapsibleGoal from "@/app/components/CollapsibleGoal.jsx";
@@ -111,9 +111,9 @@ export default async function budgetDetails({ params }) {
       </div>
       <div id="budgetIdButtons">
         <div id="addNewButtons">
-          <NewExpense budgetId={budgetId} categories={categories} user={user} />
-          <NewCapital budgetId={budgetId} user={user} />
-          <NewGoal budgetId={budgetId} user={user} />
+          <AddExpense budgetId={budgetId} categories={categories} user={user} />
+          <AddCapital budgetId={budgetId} user={user} />
+          <AddGoal budgetId={budgetId} user={user} />
         </div>
 
         <Link href={`/budget`}>

@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation.js";
 import { useState } from "react";
 
-export default function NewCapital({ budgetId, user }) {
+export default function AddCapital({ budgetId, user }) {
   const [addCapital, setAddCapital] = useState(false);
   const [capitalName, setCapitalName] = useState("");
   const [capitalAmount, setCapitalAmount] = useState("");
