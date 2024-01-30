@@ -1,6 +1,8 @@
 import { fetchUser } from "@/lib/fetchUser.js";
 import Link from "next/link.js";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const user = await fetchUser();
 
