@@ -784,6 +784,7 @@ Credit Page
   border-radius: 15px;
   transition: bottom 0.5s;
   transition-delay: 0.65s;
+  background-color: rgba(0, 0, 0, 0.514);
 }
 
 .card:hover .content {
