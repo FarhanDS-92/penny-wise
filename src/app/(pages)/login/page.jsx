@@ -16,6 +16,7 @@ export default function Login() {
 
   async function handleLogin(e) {
     e.preventDefault();
+    setIsLoading(true);
     const response = await fetch("/api/users/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -84,7 +85,11 @@ export default function Login() {
             </div>
             <br />
 
-            <button type="submit" disabled={isLoading} className="btn-login">
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="btn-login-register"
+            >
               {isLoading ? (
                 <img
                   src="spinball.svg"

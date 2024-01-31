@@ -10,6 +10,7 @@ export default function Register() {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const [error, setError] = useState("");
 
@@ -17,6 +18,7 @@ export default function Register() {
 
   async function handleRegister(e) {
     e.preventDefault();
+    setIsLoading(true);
     const response = await fetch("/api/users/register", {
       method: "POST",
       body: JSON.stringify({
@@ -26,6 +28,7 @@ export default function Register() {
       }),
     });
     const info = await response.json();
+    setIsLoading(false);
     if (info.error) {
       return setError(info.error);
     }
@@ -93,8 +96,17 @@ export default function Register() {
               </button>
             </div>
             <br />
-            <button type="submit" className="btn-login">
-              Register
+            <button type="submit" className="btn-login-register">
+              {isLoading ? (
+                <img
+                  src="spinball.svg"
+                  alt="gear-loading"
+                  width={40}
+                  height={40}
+                />
+              ) : (
+                "Register"
+              )}
             </button>
             <br />
             <div className="link-login-register">

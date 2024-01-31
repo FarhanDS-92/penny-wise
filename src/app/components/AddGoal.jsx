@@ -78,7 +78,12 @@ export default function AddGoal({ budgetId, user }) {
             onChange={(e) => setGoalAmount(e.target.value)}
           />
 
-          <button type="Submit">Submit</button>
+          <button
+            id={user.isDarkMode ? "button-dark" : "button-light"}
+            type="Submit"
+          >
+            Submit
+          </button>
           <p>{error}</p>
         </form>
       </div>

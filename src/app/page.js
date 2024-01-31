@@ -23,7 +23,7 @@ export default async function Home() {
 
         <img
           className="snapShotImg"
-          src="/screenShot_1.png"
+          src="/Screenshot1.png"
           alt="Example image of yearly budget"
         />
       </div>
@@ -35,7 +35,7 @@ export default async function Home() {
       <div className="snapShot">
         <img
           className="snapShotImg"
-          src="/screenShot_2.png"
+          src="/Screenshot2.png"
           alt="Example image of monthly budget"
         />
         <div className="homeDetails-container">
