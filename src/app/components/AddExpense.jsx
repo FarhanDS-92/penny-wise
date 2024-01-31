@@ -91,6 +91,7 @@ export default function AddExpense({ budgetId, categories, user }) {
 
       <div id="newExpense" style={{ display: addExpense ? "block" : "none" }}>
         <button
+          id={user.isDarkMode ? "button-dark" : "button-light"}
           aria-label="Add new expense category"
           onClick={handleAddCategory}
         >
@@ -111,7 +112,12 @@ export default function AddExpense({ budgetId, categories, user }) {
               value={newCategory}
               onChange={(e) => setNewCategory(e.target.value)}
             />
-            <button type="Submit">Submit</button>
+            <button
+              id={user.isDarkMode ? "button-dark" : "button-light"}
+              type="Submit"
+            >
+              Submit
+            </button>
             <p>{errorCategory}</p>
           </form>
         </div>
@@ -155,7 +161,12 @@ export default function AddExpense({ budgetId, categories, user }) {
             onChange={(e) => setExpenseAmount(e.target.value)}
           />
 
-          <button type="Submit">Submit</button>
+          <button
+            id={user.isDarkMode ? "button-dark" : "button-light"}
+            type="Submit"
+          >
+            Submit
+          </button>
           <p>{error}</p>
         </form>
       </div>

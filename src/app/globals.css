@@ -229,6 +229,22 @@ Home Page
   max-width: 700px;
 }
 
+.home-register {
+  width: 100%;
+  background-color: #e6842f;
+  color: black;
+  border-radius: 50px;
+  box-shadow: 3px 3px black;
+  padding: 7px 10px;
+  font-weight: bolder;
+  transition: 300ms ease-out;
+}
+
+.home-register:hover {
+  background-color: #eab485;
+  color: black;
+}
+
 /* 
 *************************************************************
 Login / Register
@@ -280,9 +296,10 @@ Login / Register
 .input-login-size {
   width: 230px;
   height: 30px;
+  padding: 0px 5px;
 }
 
-.btn-login {
+.btn-login-register {
   color: #fff;
   border-radius: 3px;
   width: 80px;
@@ -997,10 +1014,6 @@ Media Queries
   }
 
   .snapShotImg {
-    width: 100%;
-  }
-
-  .home-register {
     width: 100%;
   }
 }

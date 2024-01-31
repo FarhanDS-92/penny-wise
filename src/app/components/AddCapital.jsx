@@ -76,7 +76,12 @@ export default function AddCapital({ budgetId, user }) {
             onChange={(e) => setCapitalAmount(e.target.value)}
           />
 
-          <button type="Submit">Submit</button>
+          <button
+            id={user.isDarkMode ? "button-dark" : "button-light"}
+            type="Submit"
+          >
+            Submit
+          </button>
           <p>{error}</p>
         </form>
       </div>

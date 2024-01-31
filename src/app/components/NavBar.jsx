@@ -78,7 +78,7 @@ export default function Navbar({ user }) {
               <div id="mode-switch" onClick={modeSwitch}>
                 {isDarkMode ? <FaSun /> : <FaMoon />}
               </div>
-              <Link href="/budget" passHref>
+              <Link href="/budget">
                 <div
                   id={user.isDarkMode ? "nav-text-dark" : "nav-text"}
                   onClick={handleLinkClick}
@@ -92,16 +92,15 @@ export default function Navbar({ user }) {
             <Logout user={user} />
           ) : (
             <>
-              <Link href="/login" passHref>
-                <div
-                  id={user.isDarkMode ? "nav-text-dark" : "nav-text"}
-                  onClick={handleLinkClick}
-                >
+              <Link href="/login">
+                <div id="nav-text" onClick={handleLinkClick}>
                   Login
                 </div>
               </Link>
-              <Link href="/register" passHref>
-                <div onClick={handleLinkClick}>Register</div>
+              <Link href="/register">
+                <div id="nav-text" onClick={handleLinkClick}>
+                  Register
+                </div>
               </Link>
             </>
           )}

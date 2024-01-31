@@ -13,7 +13,7 @@ export default async function () {
         <div className="card_Container">
           <div className="card">
             <div className="imbBx">
-              <img className="" src="FarhanPic.jpg" alt="farhan" />
+              <img className="" src="FarhanSiddiqi.jpg" alt="farhan siddiq" />
             </div>
 
             <div className="content">
@@ -63,7 +63,11 @@ export default async function () {
         <div className="card_Container">
           <div className="card">
             <div className="imbBx">
-              <img className="" src="CalypsoPic.jpg" alt="calypso" />
+              <img
+                className=""
+                src="CalypsoHernandez.jpg"
+                alt="calypso hernandez"
+              />
             </div>
 
             <div className="content">
@@ -100,7 +104,11 @@ export default async function () {
         <div className="card_Container">
           <div className="card">
             <div className="imbBx">
-              <img className="member-pic" src="VictorPic.jpg" alt="victor" />
+              <img
+                className="member-pic"
+                src="VictorTroche.jpg"
+                alt="victor troche"
+              />
             </div>
 
             <div className="content">
@@ -138,7 +146,7 @@ export default async function () {
         <div className="card_Container">
           <div className="card">
             <div className="imbBx">
-              <img className="member-pic" src="PimpaPic.jpg" alt="pimpa" />
+              <img className="member-pic" src="PimpaStephens.jpg" alt="pimpa" />
             </div>
 
             <div className="content">
